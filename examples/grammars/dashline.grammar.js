@@ -1,6 +1,6 @@
 // line of more then one dashes
 
-const { pt } = require("../..")
+const pt = require("../..")
 
 module.exports = {
   one_or_more: pt.grammars.one_or_more,

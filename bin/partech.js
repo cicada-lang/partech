@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const cli = require("../lib/partech/cli")
+const cli = require("../lib/cli")
 const process = require("process")
 
 process.on("unhandledRejection", (error) => {

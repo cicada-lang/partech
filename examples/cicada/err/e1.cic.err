@@ -1,9 +1,0 @@
-
-I infer the type to be String.
-But the given type is Nat.
-
-previous:
-- "ratatouille"
-- @the Nat "ratatouille"
-
-

@@ -1,6 +1,6 @@
 // Symbol expression (a.k.a. sexp) -- implemented by one_or_more
 
-const { pt } = require("../..")
+const pt = require("../..")
 
 module.exports = {
   one_or_more: pt.grammars.one_or_more,

@@ -14,7 +14,6 @@ commands.t = async () => {
 commands.test_all = async () => {
   await commands.test_lib()
   await commands.test_impression()
-  await commands.test_cicada()
   await commands.test_partech()
 }
 
@@ -29,20 +28,6 @@ commands.test_impression = async () => {
     snapshot.out(({ file }) =>
       path.resolve("snapshot", changeCase.paramCase(file) + ".out")
     )
-  )
-}
-
-commands.test_cicada = async () => {
-  await test(
-    "./bin/cic.js $file",
-    { file: "examples/cicada/out/**.cic" },
-    snapshot.out(({ file }) => file + ".out")
-  )
-
-  await test(
-    "./bin/cic.js $file",
-    { file: "examples/cicada/err/**.cic" },
-    snapshot.err(({ file }) => file + ".err")
   )
 }
 

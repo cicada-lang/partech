@@ -1,9 +1,0 @@
-
-I see unexpected Type.
-I am expecting the type sigma.
-
-previous:
-- cons(String, String)
-- @the Type cons(String, String)
-
-

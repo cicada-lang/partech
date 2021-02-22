@@ -1,8 +1,10 @@
-import * as Exp from "../../exp"
 import * as Env from "../../env"
+import * as Mod from "../../mod"
+import * as Exp from "../../exp"
 
 export type Closure = {
-  env: Env.Env
   name: string
-  ret: Exp.Exp
+  exp: Exp.Exp
+  mod: Mod.Mod
+  env: Env.Env
 }

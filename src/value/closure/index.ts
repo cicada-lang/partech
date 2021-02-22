@@ -1,3 +1,3 @@
 export * from "./closure"
 export * from "./closure-apply"
-export * from "./closure-create"
+export * from "./closure-equal"

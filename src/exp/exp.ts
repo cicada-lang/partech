@@ -1,29 +1,72 @@
-import { Env } from "../env"
-import { Ctx } from "../ctx"
-import { Value } from "../value"
+export type Exp = v | fn | ap | str | pattern | grammar
 
-export type Exp = {
-  kind: string
-  evaluate(env: Env): Value
-  check?(ctx: Ctx, t: Value): void
-  infer?(ctx: Ctx): Value
-  repr(): string
-  alpha_repr(ctx: AlphaCtx): string
+type v = {
+  kind: "Exp.v"
+  name: string
 }
 
-export class AlphaCtx {
-  depth: number
-  depths: Map<string, number>
+export const v = (name: string): v => ({
+  kind: "Exp.v",
+  name,
+})
 
-  constructor(depth: number = 0, depths: Map<string, number> = new Map()) {
-    this.depth = depth
-    this.depths = depths
-  }
-
-  extend(name: string): AlphaCtx {
-    return new AlphaCtx(
-      this.depth + 1,
-      new Map([...this.depths, [name, this.depth]])
-    )
-  }
+type fn = {
+  kind: "Exp.fn"
+  name: string
+  ret: Exp
 }
+
+export const fn = (name: string, ret: Exp): fn => ({
+  kind: "Exp.fn",
+  name,
+  ret,
+})
+
+type ap = {
+  kind: "Exp.ap"
+  target: Exp
+  args: Array<Exp>
+}
+
+export const ap = (target: Exp, args: Array<Exp>): ap => ({
+  kind: "Exp.ap",
+  target,
+  args,
+})
+
+type str = {
+  kind: "Exp.str"
+  value: string
+}
+
+export const str = (value: string): str => ({
+  kind: "Exp.str",
+  value,
+})
+
+type pattern = {
+  kind: "Exp.pattern"
+  label: string
+  value: RegExp
+}
+
+export const pattern = (label: string, value: RegExp): pattern => ({
+  kind: "Exp.pattern",
+  label,
+  value,
+})
+
+type grammar = {
+  kind: "Exp.grammar"
+  name: string
+  choices: Map<string, Array<{ name?: string; value: Exp }>>
+}
+
+export const grammar = (
+  name: string,
+  choices: Map<string, Array<{ name?: string; value: Exp }>>
+): grammar => ({
+  kind: "Exp.grammar",
+  name,
+  choices,
+})

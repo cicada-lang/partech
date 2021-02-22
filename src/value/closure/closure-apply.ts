@@ -1,12 +1,12 @@
 import * as Closure from "../closure"
-import * as Value from "../../value"
+import * as Env from "../../env"
 import * as Exp from "../../exp"
-import { Env } from "../../env"
-import * as Evaluate from "../../evaluate"
+import * as Value from "../../value"
 
 export function apply(
-  closure: Closure.Closure,
-  value: Value.Value
-): Value.Value {
-  return Evaluate.evaluate(closure.env.extend(closure.name, value), closure.ret)
+  cl: Closure.Closure,
+  args: Array<Value.Value>
+): Array<Value.Value> {
+  const { name, exp, mod, env } = cl
+  return Exp.evaluate(mod, Env.extend(env, name, args), exp)
 }
