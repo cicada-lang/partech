@@ -8,9 +8,9 @@
   ],
   "scripts": {
     "build": "npx tsc",
-    "test": "./dev t",
     "watch": "npx tsc --watch",
-    "format": "npx prettier src examples --write"
+    "format": "npx prettier src --write",
+    "test": "./dev t"
   },
   "prettier": {
     "semi": false,
