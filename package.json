@@ -26,11 +26,11 @@
     "@types/nanoid": "^2.1.0",
     "@types/node": "^14.14.37",
     "prettier": "^2.2.1",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.4"
   },
   "dependencies": {
     "@types/deep-diff": "^1.0.0",
-    "@xieyuheng/test-runner": "^0.1.18",
+    "@xieyuheng/test-runner": "^0.1.20",
     "chalk": "^4.1.0",
     "change-case": "^4.1.2",
     "deep-diff": "^1.0.2",
