@@ -39,19 +39,19 @@ commands.test_partech = async () => {
 commands.test_partech_lex = async () => {
   await test(
     "./bin/partech.js lex $file --table $file",
-    { file: "examples/tables/example.table.js" },
-    snapshot.out((_) => "examples/tables/example.tokens.json")
+    { file: "tests/tables/example.table.js" },
+    snapshot.out((_) => "tests/tables/example.tokens.json")
   )
 
   await test(
     "./bin/partech.js lex $file",
-    { file: "examples/tables/example.table.js" },
-    snapshot.out((_) => "examples/tables/default.tokens.json")
+    { file: "tests/tables/example.table.js" },
+    snapshot.out((_) => "tests/tables/default.tokens.json")
   )
 }
 
 commands.test_partech_parse = async () => {
-  const base = "examples/grammars"
+  const base = "tests/grammars"
 
   const dirents = await fs.promises.readdir(base, {
     encoding: "utf8",
