@@ -1,5 +1,7 @@
 # Partech
 
+Parsing Techniques
+
 ## Community
 
 Contributions are welcome, see [current TODO list](TODO.md) for tasks. <br>
