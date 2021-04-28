@@ -70,7 +70,7 @@ commands.test_partech_parse = async () => {
       )
 
       await test(
-        `./bin/partech.js parse $file --grammar ${grammar} --nocolor`,
+        `./bin/partech.js parse $file --grammar ${grammar}`,
         { file: `${base}/${name}/**.oh` },
         snapshot.err(({ file }) => file + ".err")
       )

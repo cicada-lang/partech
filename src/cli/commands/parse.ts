@@ -7,7 +7,6 @@ import * as lexers from "../../lexers"
 import * as ut from "../../ut"
 import fs from "fs"
 import path from "path"
-import strip_ansi from "strip-ansi"
 
 export const command = "parse <input>"
 
@@ -19,7 +18,6 @@ export const builder = {
   output: { type: "string", alias: "o" },
   grammar: { type: "string", demandOption: true },
   table: { type: "string" },
-  nocolor: { type: "boolean", default: false },
 }
 
 type Argv = {
@@ -27,7 +25,6 @@ type Argv = {
   output: string | undefined
   grammar: string
   table: string | undefined
-  nocolor: boolean
 }
 
 export const handler = async (argv: Argv) => {
@@ -48,7 +45,7 @@ export const handler = async (argv: Argv) => {
         let message = error.message
         message += "\n"
         message += Span.report(error.span, text)
-        console.error(argv.nocolor ? strip_ansi(message) : message)
+        console.error(message)
         process.exit(1)
       } else {
         throw error
