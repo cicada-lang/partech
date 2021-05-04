@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@types/deep-diff": "^1.0.0",
-    "@xieyuheng/test-runner": "^0.1.20",
+    "@xieyuheng/test-runner": "^0.1.22",
     "chalk": "^4.1.1",
     "change-case": "^4.1.2",
     "deep-diff": "^1.0.2",
@@ -42,7 +42,7 @@
     "portfinder": "^1.0.28",
     "readdirp": "^3.6.0",
     "regexp-match-indices": "^1.0.2",
-    "yargs": "^16.2.0"
+    "yargs": "^17.0.1"
   },
   "license": "GPL-3.0-or-later"
 }
