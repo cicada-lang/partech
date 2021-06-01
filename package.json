@@ -1,6 +1,6 @@
 {
   "name": "@cicada-lang/partech",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "repository": "github:cicada-lang/partech",
   "main": "lib/main.js",
   "files": [
