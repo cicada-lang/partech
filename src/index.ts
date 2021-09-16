@@ -1,6 +1,7 @@
 export { str } from "./tree"
 export { matcher } from "./tree"
 export { Tree } from "./tree"
+export { Token } from "./token"
 export { report } from "./span"
 export * as lexers from "./lexers"
 export * as grammars from "./grammars"

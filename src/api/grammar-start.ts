@@ -12,8 +12,8 @@ export function grammar_start(
   if (grammar.kind !== "Value.grammar") {
     throw new Error(
       `Expecting grammar to be Value.grammar.\n` +
-        `start: ${start}\n` +
-        `grammar: ${ut.inspect(Value.present(grammar))}\n`
+        `  start: ${start}\n` +
+        `  grammar: ${ut.inspect(Value.present(grammar))}\n`
     )
   }
 
