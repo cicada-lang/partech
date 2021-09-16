@@ -26,7 +26,7 @@ function match_parentheses(left: string, right: string): boolean {
   )
 }
 
-function check_parentheses(text: string): Result {
+function parens_check(text: string): Result {
   const tokens = lex(text)
   const stack: Array<Token.Token> = []
   for (const token of tokens) {
@@ -55,4 +55,33 @@ function check_parentheses(text: string): Result {
   }
 }
 
-export const common = { lex, check_parentheses }
+function parens_depth(text: string): number {
+  let depth = 0
+  const tokens = lex(text)
+  const stack: Array<Token.Token> = []
+  for (const token of tokens) {
+    if (
+      token.label === "symbol" &&
+      ["(", ")", "[", "]", "{", "}"].includes(token.value)
+    ) {
+      if (["(", "[", "{"].includes(token.value)) {
+        stack.push(token)
+      } else {
+        const top = stack.pop()
+        if (top === undefined) {
+          throw new Error("parentheses excess")
+        } else if (!match_parentheses(top.value, token.value)) {
+          throw new Error("parentheses mismatch")
+        }
+      }
+    }
+  }
+
+  return stack.length
+}
+
+export const common = {
+  lex,
+  parens_check,
+  parens_depth,
+}
