@@ -18,6 +18,14 @@ type Result =
   | { kind: "excess"; token: Token.Token }
   | { kind: "mismatch"; token: Token.Token }
 
+function match_parentheses(left: string, right: string): boolean {
+  return (
+    (left === "(" && right === ")") ||
+    (left === "[" && right === "]") ||
+    (left === "{" && right === "}")
+  )
+}
+
 function check_parentheses(text: string): Result {
   const tokens = lex(text)
   const stack: Array<Token.Token> = []
@@ -32,7 +40,7 @@ function check_parentheses(text: string): Result {
         const top = stack.pop()
         if (top === undefined) {
           return { kind: "excess", token }
-        } else if (token.value !== top.value) {
+        } else if (!match_parentheses(top.value, token.value)) {
           return { kind: "mismatch", token }
         }
       }

@@ -23,9 +23,10 @@ function evaluate_part(
   env: Env.Env,
   part: { name?: string; value: Exp.Exp }
 ): Array<{ name?: string; value: Value.Value }> {
-  function create_part(
+  function create_part(value: Value.Value): {
+    name?: string
     value: Value.Value
-  ): { name?: string; value: Value.Value } {
+  } {
     return part.name && pickup_p(value) ? { value, name: part.name } : { value }
   }
 
