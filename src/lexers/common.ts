@@ -8,20 +8,25 @@ const table_lexer = TableLexer.build([
   ["symbol", "^\\s*([^_\\p{Letter}0-9\\s])\\s*", "u"],
 ])
 
+function lex(text: string): Array<Token.Token> {
+  return text.trim().length === 0 ? [] : table_lexer.lex(text)
+}
+
 type Result =
   | { kind: "balance" }
   | { kind: "lack"; token: Token.Token }
   | { kind: "excess"; token: Token.Token }
   | { kind: "mismatch"; token: Token.Token }
 
-function check_parentheses(tokens: Array<Token.Token>): Result {
+function check_parentheses(text: string): Result {
+  const tokens = lex(text)
   const stack: Array<Token.Token> = []
   for (const token of tokens) {
     if (
       token.label === "symbol" &&
-      ["(", ")", "[", "]", "{", "}"].contains(token.value)
+      ["(", ")", "[", "]", "{", "}"].includes(token.value)
     ) {
-      if (["(", "[", "{"].contains(token.value)) {
+      if (["(", "[", "{"].includes(token.value)) {
         stack.push(token)
       } else {
         const top = stack.pop()
@@ -34,17 +39,12 @@ function check_parentheses(tokens: Array<Token.Token>): Result {
     }
   }
 
-  if (stack.length === 0) {
+  const top = stack.pop()
+  if (top === undefined) {
     return { kind: "balance" }
   } else {
-    return { kind: "lack", token: stack.pop() }
+    return { kind: "lack", token: top }
   }
 }
 
-export const common = {
-  lex(text: string): Array<Token.Token> {
-    return text.trim().length === 0 ? [] : table_lexer.lex(text)
-  },
-
-  check_parentheses,
-}
+export const common = { lex, check_parentheses }
