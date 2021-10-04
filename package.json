@@ -24,7 +24,7 @@
     "@types/fs-readdir-recursive": "^1.0.0",
     "@types/js-yaml": "^4.0.3",
     "@types/nanoid": "^2.1.0",
-    "@types/node": "^16.9.1",
+    "@types/node": "^16.10.2",
     "prettier": "^2.4.1",
     "typescript": "^4.4.3"
   },
@@ -38,11 +38,11 @@
     "fast-glob": "^3.2.7",
     "fs-readdir-recursive": "^1.1.0",
     "js-yaml": "^4.1.0",
-    "nanoid": "^3.1.25",
+    "nanoid": "^3.1.28",
     "portfinder": "^1.0.28",
     "readdirp": "^3.6.0",
     "regexp-match-indices": "^1.0.2",
-    "yargs": "^17.1.1"
+    "yargs": "^17.2.1"
   },
   "license": "GPL-3.0-or-later"
 }
