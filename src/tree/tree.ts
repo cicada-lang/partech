@@ -28,9 +28,11 @@ export const node = (head: Head, body: Body, span: Span.Span): node => ({
 export type leaf = {
   kind: "Tree.leaf"
   token: Token.Token
+  span: Span.Span
 }
 
 export const leaf = (token: Token.Token): leaf => ({
   kind: "Tree.leaf",
   token,
+  span: token.span,
 })
