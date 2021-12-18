@@ -1,4 +1,4 @@
-import chalk from "chalk"
+import picocolors from "picocolors"
 
 export type ColorMode = "escape-code" | "html"
 
@@ -12,8 +12,8 @@ export function color(
 ): string {
   switch (opts.mode) {
     case "escape-code": {
-      if (opts.color === "red") text = chalk.bold.red(text)
-      if (opts.background === "red") text = chalk.bgRed(text)
+      if (opts.color === "red") text = picocolors.bold(picocolors.red(text))
+      if (opts.background === "red") text = picocolors.bgRed(text)
       return text
     }
     case "html": {
