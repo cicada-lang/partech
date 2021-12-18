@@ -1,8 +1,8 @@
+import { ParsingError } from "../../errors"
+import * as ut from "../../ut"
+import * as Value from "../../value"
 import * as Schedule from "../schedule"
 import * as Task from "../task"
-import { ParsingError } from "../../errors"
-import * as Value from "../../value"
-import * as ut from "../../ut"
 
 export function insert_grammar(
   schedule: Schedule.Schedule,

@@ -1,4 +1,4 @@
 export * from "./gen-parse"
 export * from "./grammar-start"
-export * from "./trim-boundary"
 export * from "./span-union"
+export * from "./trim-boundary"

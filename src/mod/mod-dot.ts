@@ -1,5 +1,5 @@
-import * as Mod from "../mod"
 import * as Exp from "../exp"
+import * as Mod from "../mod"
 import * as Value from "../value"
 
 export function dot(mod: Mod.Mod, name: string): Value.Value {

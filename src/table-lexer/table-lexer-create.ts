@@ -1,10 +1,9 @@
-import * as TableLexer from "../table-lexer"
-import { LexingError } from "../errors"
-import * as Token from "../token"
-import * as Span from "../span"
-import * as ut from "../ut"
 // NOTE https://github.com/tc39/proposal-regexp-match-indices
 import execWithIndices from "regexp-match-indices"
+import { LexingError } from "../errors"
+import * as Span from "../span"
+import * as TableLexer from "../table-lexer"
+import * as Token from "../token"
 
 export function create(table: Array<[string, RegExp]>): TableLexer.TableLexer {
   for (const [label, regexp] of table) {

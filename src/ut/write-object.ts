@@ -1,4 +1,3 @@
-import fs from "fs"
 import * as ut from "./index"
 
 export type Format = "json" | "yaml"

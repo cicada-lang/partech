@@ -1,5 +1,5 @@
-import * as Tree from "../tree"
 import * as Token from "../token"
+import * as Tree from "../tree"
 import * as ut from "../ut"
 
 export function token(tree: Tree.Tree): Token.Token {

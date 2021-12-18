@@ -1,5 +1,5 @@
-import * as ut from "./index"
 import * as deep_diff from "deep-diff"
+import * as ut from "./index"
 
 export function assert_equal(x: any, y: any): void {
   if (!ut.equal(x, y)) {

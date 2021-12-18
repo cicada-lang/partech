@@ -1,5 +1,5 @@
-import * as FinishedChart from "../finished-chart"
 import * as Token from "../../token"
+import * as FinishedChart from "../finished-chart"
 
 export function create(
   tokens: Array<Token.Token>

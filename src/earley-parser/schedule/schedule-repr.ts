@@ -1,7 +1,7 @@
 import * as Schedule from "../schedule"
+import * as Task from "../task"
 import * as TaskChart from "../task-chart"
 import * as TaskQueue from "../task-queue"
-import * as Task from "../task"
 
 export function repr(schedule: Schedule.Schedule): string {
   return repr_queue(schedule.queue) + repr_chart(schedule.chart)

@@ -1,5 +1,5 @@
-import { BaseError } from "./base-error"
 import * as Span from "../span"
+import { BaseError } from "./base-error"
 
 export class ParsingError extends BaseError {
   message: string

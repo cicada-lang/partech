@@ -1,5 +1,5 @@
-import * as Tree from "../tree"
 import * as Span from "../span"
+import * as Tree from "../tree"
 
 export function span(tree: Tree.Tree): Span.Span {
   switch (tree.kind) {

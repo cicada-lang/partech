@@ -1,12 +1,12 @@
-import * as Schedule from "../schedule"
-import * as TaskChart from "../task-chart"
-import * as Task from "../task"
 import { ParsingError } from "../../errors"
-import * as Value from "../../value"
+import * as Span from "../../span"
 import * as Token from "../../token"
 import * as Tree from "../../tree"
-import * as Span from "../../span"
 import * as ut from "../../ut"
+import * as Value from "../../value"
+import * as Schedule from "../schedule"
+import * as Task from "../task"
+import * as TaskChart from "../task-chart"
 
 export function harvest(schedule: Schedule.Schedule): Tree.Tree {
   const start = 0

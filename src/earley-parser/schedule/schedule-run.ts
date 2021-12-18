@@ -1,7 +1,7 @@
-import * as Schedule from "../schedule"
-import * as TaskQueue from "../task-queue"
 import * as FinishedChart from "../finished-chart"
+import * as Schedule from "../schedule"
 import * as Task from "../task"
+import * as TaskQueue from "../task-queue"
 
 export type Opts = {
   task?: { verbose?: boolean }

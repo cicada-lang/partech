@@ -1,8 +1,8 @@
-import * as Schedule from "../schedule"
-import * as TaskQueue from "../task-queue"
-import * as TaskChart from "../task-chart"
 import * as ResumableChart from "../resumable-chart"
+import * as Schedule from "../schedule"
 import * as Task from "../task"
+import * as TaskChart from "../task-chart"
+import * as TaskQueue from "../task-queue"
 
 export function insert_task(
   schedule: Schedule.Schedule,

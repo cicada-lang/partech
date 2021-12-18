@@ -1,6 +1,6 @@
 import * as EarleyParser from "../earley-parser"
-import * as TableLexer from "../table-lexer"
 import * as Mod from "../mod"
+import * as TableLexer from "../table-lexer"
 import * as Tree from "../tree"
 import * as ut from "../ut"
 

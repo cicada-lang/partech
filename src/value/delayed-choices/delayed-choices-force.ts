@@ -1,8 +1,8 @@
-import * as DelayedChoices from "../delayed-choices"
 import * as Env from "../../env"
-import * as Mod from "../../mod"
 import * as Exp from "../../exp"
+import * as Mod from "../../mod"
 import * as Value from "../../value"
+import * as DelayedChoices from "../delayed-choices"
 
 export function force(
   delayed: DelayedChoices.DelayedChoices

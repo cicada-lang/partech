@@ -1,6 +1,6 @@
-import * as Value from "../value"
 import * as Exp from "../exp"
 import * as ut from "../ut"
+import * as Value from "../value"
 
 export type Present = ut.Obj<ut.Json> | Array<ut.Json> | string
 

@@ -1,3 +1,3 @@
 export * from "./span"
-export * from "./span-shift"
 export * from "./span-report"
+export * from "./span-shift"

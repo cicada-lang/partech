@@ -1,5 +1,5 @@
-import * as Tree from "../tree"
 import * as Span from "../span"
+import * as Tree from "../tree"
 import * as ut from "../ut"
 
 export function matcher<A>(choices: {

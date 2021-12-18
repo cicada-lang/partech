@@ -1,5 +1,5 @@
-import * as ResumableChart from "../resumable-chart"
 import * as Token from "../../token"
+import * as ResumableChart from "../resumable-chart"
 
 export function create(
   tokens: Array<Token.Token>

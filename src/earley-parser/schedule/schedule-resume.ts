@@ -1,6 +1,5 @@
-import * as Schedule from "../schedule"
-import * as TaskChart from "../task-chart"
 import * as ResumableChart from "../resumable-chart"
+import * as Schedule from "../schedule"
 import * as Task from "../task"
 
 export function resume(schedule: Schedule.Schedule, task: Task.Task): void {

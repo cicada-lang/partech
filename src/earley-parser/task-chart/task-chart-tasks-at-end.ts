@@ -1,5 +1,5 @@
-import * as TaskChart from "../task-chart"
 import * as Task from "../task"
+import * as TaskChart from "../task-chart"
 
 export function tasks_at_end(
   chart: TaskChart.TaskChart

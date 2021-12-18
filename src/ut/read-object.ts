@@ -1,5 +1,5 @@
-import YAML from "js-yaml"
 import fs from "fs"
+import YAML from "js-yaml"
 
 export async function read_object(file: string): Promise<any> {
   const text = await fs.promises.readFile(file, "utf8")

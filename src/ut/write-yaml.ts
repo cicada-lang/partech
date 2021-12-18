@@ -1,6 +1,6 @@
+import fs from "fs"
 import YAML from "js-yaml"
 import path from "path"
-import fs from "fs"
 
 export async function write_yaml(
   obj: any,

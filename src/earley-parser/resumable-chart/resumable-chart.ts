@@ -1,5 +1,5 @@
-import * as Task from "../task"
 import * as Value from "../../value"
+import * as Task from "../task"
 
 export type TaskId = string
 export type GrammarName = string

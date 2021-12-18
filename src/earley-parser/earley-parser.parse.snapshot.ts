@@ -1,4 +1,4 @@
-import { parser, lexer } from "./earley-parser.parse.test"
+import { lexer, parser } from "./earley-parser.parse.test"
 
 function show(text: string): void {
   const tree = parser.parse(lexer.lex(text))

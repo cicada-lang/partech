@@ -1,8 +1,8 @@
-import * as TableLexer from "../../table-lexer"
-import * as lexers from "../../lexers"
-import * as ut from "../../ut"
 import fs from "fs"
 import path from "path"
+import * as lexers from "../../lexers"
+import * as TableLexer from "../../table-lexer"
+import * as ut from "../../ut"
 
 export const command = "lex <input>"
 

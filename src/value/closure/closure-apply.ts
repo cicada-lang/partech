@@ -1,7 +1,7 @@
-import * as Closure from "../closure"
 import * as Env from "../../env"
 import * as Exp from "../../exp"
 import * as Value from "../../value"
+import * as Closure from "../closure"
 
 export function apply(
   cl: Closure.Closure,

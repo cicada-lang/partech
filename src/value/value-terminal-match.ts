@@ -1,6 +1,6 @@
-import * as Value from "../value"
 import * as Token from "../token"
 import * as ut from "../ut"
+import * as Value from "../value"
 
 export function terminal_match(
   value: Value.Value,

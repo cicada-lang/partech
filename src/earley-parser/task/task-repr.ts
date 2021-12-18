@@ -1,6 +1,6 @@
-import * as Task from "../task"
-import * as Value from "../../value"
 import * as ut from "../../ut"
+import * as Value from "../../value"
+import * as Task from "../task"
 
 // NOTE The format of repr:
 // <task> = <grammar>:<choice>@<index> -> <part> ...

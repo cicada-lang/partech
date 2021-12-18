@@ -1,9 +1,9 @@
 import * as EarleyParser from "../earley-parser"
-import * as Schedule from "./schedule"
-import * as Value from "../value"
 import * as Token from "../token"
 import * as Tree from "../tree"
 import * as ut from "../ut"
+import * as Value from "../value"
+import * as Schedule from "./schedule"
 
 export function create(
   grammar: Value.Value,

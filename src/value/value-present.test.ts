@@ -1,9 +1,9 @@
+import * as Env from "../env"
 import * as Exp from "../exp"
 import * as Mod from "../mod"
-import * as Env from "../env"
-import * as Value from "../value"
 import * as mods from "../mods"
 import * as ut from "../ut"
+import * as Value from "../value"
 
 function test(
   mod: Mod.Mod,

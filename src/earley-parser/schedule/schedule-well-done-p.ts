@@ -1,6 +1,6 @@
 import * as Schedule from "../schedule"
-import * as TaskChart from "../task-chart"
 import * as Task from "../task"
+import * as TaskChart from "../task-chart"
 
 export function well_done_p(schedule: Schedule.Schedule): boolean {
   const ending_task_p = (task: Task.Task): boolean =>

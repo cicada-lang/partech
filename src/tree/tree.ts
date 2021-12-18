@@ -1,6 +1,6 @@
-import * as ut from "../ut"
-import * as Token from "../token"
 import * as Span from "../span"
+import * as Token from "../token"
+import * as ut from "../ut"
 
 export type Tree = node | leaf
 

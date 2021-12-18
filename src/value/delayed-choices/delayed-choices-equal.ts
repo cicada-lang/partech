@@ -1,6 +1,6 @@
-import * as DelayedChoices from "../delayed-choices"
 import * as Env from "../../env"
 import * as Exp from "../../exp"
+import * as DelayedChoices from "../delayed-choices"
 
 export function equal(
   x: DelayedChoices.DelayedChoices,

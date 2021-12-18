@@ -1,8 +1,8 @@
-import * as Lexer from "../lexer"
-import * as Value from "../value"
-import * as Tree from "../tree"
-import * as Span from "../span"
 import * as EarleyParser from "../earley-parser"
+import * as Lexer from "../lexer"
+import * as Span from "../span"
+import * as Tree from "../tree"
+import * as Value from "../value"
 
 export function gen_parse<A>(opts: {
   preprocess?: (text: string) => string

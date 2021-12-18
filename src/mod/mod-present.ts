@@ -1,5 +1,5 @@
-import * as Mod from "../mod"
 import * as Exp from "../exp"
+import * as Mod from "../mod"
 import * as ut from "../ut"
 
 export type Present = ut.Obj<Exp.Present> | Mod.Metadata

@@ -1,10 +1,10 @@
-import * as Schedule from "../schedule"
-import * as TaskQueue from "../task-queue"
-import * as TaskChart from "../task-chart"
-import * as ResumableChart from "../resumable-chart"
-import * as FinishedChart from "../finished-chart"
-import * as Value from "../../value"
 import * as Token from "../../token"
+import * as Value from "../../value"
+import * as FinishedChart from "../finished-chart"
+import * as ResumableChart from "../resumable-chart"
+import * as Schedule from "../schedule"
+import * as TaskChart from "../task-chart"
+import * as TaskQueue from "../task-queue"
 
 export function create(
   tokens: Array<Token.Token>,
