@@ -1,6 +1,7 @@
 import * as TableLexer from "../table-lexer"
 import * as Token from "../token"
 
+// NOTE Remind that all regular exps use `^` which means beginning.
 const table_lexer = TableLexer.build([
   ["identifier", "^\\s*([_\\p{Letter}][_\\p{Letter}0-9]*)\\s*", "u"],
   ["string", '^\\s*("(\\\\.|[^"])*")\\s*'],
