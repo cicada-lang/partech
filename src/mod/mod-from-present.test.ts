@@ -1,9 +1,9 @@
 import * as Mod from "../mod"
 import * as mods from "../mods"
-import * as ut from "../ut"
+import { assert_equal } from "../ut/assert-equal"
 
 function test(present: Mod.Present): void {
-  ut.assert_equal(present, Mod.present(Mod.from_present(present)))
+  assert_equal(present, Mod.present(Mod.from_present(present)))
 }
 
 test(mods.exp)

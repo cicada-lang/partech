@@ -1,5 +1,5 @@
 import { ParsingError } from "../../errors"
-import * as ut from "../../ut"
+import { inspect } from "../../ut/inspect"
 import * as Value from "../../value"
 import * as Schedule from "../schedule"
 import * as Task from "../task"
@@ -13,7 +13,7 @@ export function step(schedule: Schedule.Schedule, task: Task.Task): void {
       const span = token.span
       throw new ParsingError(
         "Schedule.step should not meet Value.fn\n" +
-          `value: ${ut.inspect(Value.present(value))}`,
+          `value: ${inspect(Value.present(value))}`,
         { span }
       )
     }

@@ -1,5 +1,5 @@
 import * as Mod from "../mod"
-import * as ut from "../ut"
+import { inspect } from "../ut/inspect"
 import * as Value from "../value"
 
 export function grammar_start(
@@ -13,7 +13,7 @@ export function grammar_start(
     throw new Error(
       `Expecting grammar to be Value.grammar.\n` +
         `  start: ${start}\n` +
-        `  grammar: ${ut.inspect(Value.present(grammar))}\n`
+        `  grammar: ${inspect(Value.present(grammar))}\n`
     )
   }
 

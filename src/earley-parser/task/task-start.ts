@@ -1,4 +1,4 @@
-import * as ut from "../../ut"
+import { assert_json_array } from "../../ut/json"
 import * as Value from "../../value"
 import * as Task from "../task"
 
@@ -44,7 +44,7 @@ function repr_part(part: { name?: string; value: Value.Value }): string {
     s += JSON.stringify(present)
   } else if (present.hasOwnProperty("$pattern")) {
     const pattern = present["$pattern"]
-    const [pattern_name] = ut.assert_json_array(pattern)
+    const [pattern_name] = assert_json_array(pattern)
     s += pattern_name
   } else {
     s += JSON.stringify(present)

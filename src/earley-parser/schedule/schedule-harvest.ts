@@ -2,7 +2,8 @@ import { ParsingError } from "../../errors"
 import * as Span from "../../span"
 import * as Token from "../../token"
 import * as Tree from "../../tree"
-import * as ut from "../../ut"
+import { inspect } from "../../ut/inspect"
+import { Obj } from "../../ut/obj"
 import * as Value from "../../value"
 import * as Schedule from "../schedule"
 import * as Task from "../task"
@@ -56,7 +57,7 @@ function harvest_node(
       const span = span_from_tokens(schedule.tokens, start, end)
       throw new ParsingError(
         `Can not find choice: ${choice_name}\n` +
-          `grammar: ${ut.inspect(Value.present(grammar))}\n`,
+          `grammar: ${inspect(Value.present(grammar))}\n`,
         { span }
       )
     }
@@ -69,7 +70,7 @@ function harvest_body(
   parts: Array<{ name?: string; value: Value.Value }>,
   progress: Array<{ index: number; choice_name?: string }>,
   start: number
-): ut.Obj<Tree.Tree> {
+): Obj<Tree.Tree> {
   if (parts.length !== progress.length) {
     const span = span_from_tokens(schedule.tokens, start, start)
     throw new ParsingError(
@@ -81,7 +82,7 @@ function harvest_body(
     )
   }
 
-  const body: ut.Obj<Tree.Tree> = {}
+  const body: Obj<Tree.Tree> = {}
 
   let index = start
   for (let i = 0; i < parts.length; i++) {
@@ -109,7 +110,7 @@ function harvest_value(
       const span = span_from_tokens(schedule.tokens, index, entry.index)
       throw new ParsingError(
         "The value should be Value.grammar.\n" +
-          `value: ${ut.inspect(Value.present(value))}\n`,
+          `value: ${inspect(Value.present(value))}\n`,
         { span }
       )
     }

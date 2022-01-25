@@ -1,5 +1,7 @@
 import * as Span from "../span"
-import * as ut from "../ut"
+import { color, ColorMode } from "../ut/color"
+import { in_browser_p } from "../ut/in-browser-p"
+import { interval_overlap_p } from "../ut/interval"
 
 export function report(span: Span.Span, context: string): string {
   let s = repr_in_context(span, context)
@@ -8,13 +10,13 @@ export function report(span: Span.Span, context: string): string {
   return s
 }
 
-const color_mode: ut.ColorMode = ut.in_browser_p() ? "html" : "escape-code"
+const color_mode: ColorMode = in_browser_p() ? "html" : "escape-code"
 
 function repr_in_context(
   span: Span.Span,
   context: string,
   opts: {
-    mode: ut.ColorMode
+    mode: ColorMode
   } = {
     mode: color_mode,
   }
@@ -22,14 +24,14 @@ function repr_in_context(
   let s = ""
   for (let i = 0; i < context.length; i++) {
     if (span.lo <= i && i < span.hi) {
-      s += ut.color(context.charAt(i), { ...opts, background: "red" })
+      s += color(context.charAt(i), { ...opts, background: "red" })
     } else {
       s += context.charAt(i)
     }
   }
   // NOTE END_OF_FILE
   if (span.lo === context.length && span.hi === context.length) {
-    s += ut.color(" ", { ...opts, background: "red" })
+    s += color(" ", { ...opts, background: "red" })
   }
   return s
 }
@@ -59,7 +61,7 @@ function to_line_span_in_context(span: Span.Span, context: string): Span.Span {
   let lines = context.split("\n")
   for (let [i, line] of lines.entries()) {
     if (
-      ut.interval_overlap_p(span.lo, span.hi, cursor, cursor + line.length + 1)
+      interval_overlap_p(span.lo, span.hi, cursor, cursor + line.length + 1)
     ) {
       line_indexes.add(i)
     }

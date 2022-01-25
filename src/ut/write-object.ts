@@ -1,4 +1,5 @@
-import * as ut from "./index"
+import { write_json } from "./write-json"
+import { write_yaml } from "./write-yaml"
 
 export type Format = "json" | "yaml"
 
@@ -12,16 +13,16 @@ export async function write_object(
   }
 ): Promise<void> {
   if (file && file.endsWith(".json")) {
-    return await ut.write_json(obj, file)
+    return await write_json(obj, file)
   } else if (file && file.endsWith(".yaml")) {
-    return await ut.write_yaml(obj, file)
+    return await write_yaml(obj, file)
   } else {
     switch (opts.format) {
       case "json": {
-        return await ut.write_json(obj, file)
+        return await write_json(obj, file)
       }
       case "yaml": {
-        return await ut.write_yaml(obj, file)
+        return await write_yaml(obj, file)
       }
     }
   }

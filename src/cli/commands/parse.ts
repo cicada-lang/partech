@@ -6,7 +6,8 @@ import * as lexers from "../../lexers"
 import * as Mod from "../../mod"
 import * as Span from "../../span"
 import * as TableLexer from "../../table-lexer"
-import * as ut from "../../ut"
+import { inspect } from "../../ut/inspect"
+import { write_object } from "../../ut/write-object"
 
 export const command = "parse <input>"
 
@@ -39,7 +40,7 @@ export const handler = async (argv: Argv) => {
     const parser = EarleyParser.create(grammar)
     try {
       const tree = parser.parse(tokens)
-      ut.write_object(tree, argv.output)
+      write_object(tree, argv.output)
     } catch (error) {
       if (error instanceof ParsingError) {
         let message = error.message
@@ -54,7 +55,7 @@ export const handler = async (argv: Argv) => {
   } else {
     throw new Error(
       `Expecting mod.metadata.start to be string.\n` +
-        `mod.metadata: ${ut.inspect(mod.metadata)}\n`
+        `mod.metadata: ${inspect(mod.metadata)}\n`
     )
   }
 }

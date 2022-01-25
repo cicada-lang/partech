@@ -1,4 +1,4 @@
-import * as ut from "../../ut"
+import { inspect } from "../../ut/inspect"
 import * as Task from "../task"
 import * as TaskChart from "../task-chart"
 
@@ -10,9 +10,7 @@ export function tasks_at(
 
   if (task_map === undefined) {
     throw new Error(
-      "task_map is empty\n" +
-        `index: ${index}\n` +
-        `chart: ${ut.inspect(chart)}\n`
+      "task_map is empty\n" + `index: ${index}\n` + `chart: ${inspect(chart)}\n`
     )
   }
 

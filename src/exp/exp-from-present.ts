@@ -1,5 +1,6 @@
 import * as Exp from "../exp"
-import * as ut from "../ut"
+import { inspect } from "../ut/inspect"
+import { Obj } from "../ut/obj"
 
 export function from_present(present: Exp.Present): Exp.Exp {
   if (typeof present === "string") return from_string(present)
@@ -14,7 +15,7 @@ function from_string(str: string): Exp.Exp {
   }
 }
 
-function from_object(obj: ut.Obj<any>): Exp.Exp {
+function from_object(obj: Obj<any>): Exp.Exp {
   if (obj.hasOwnProperty("$fn")) {
     const [name, ret] = obj["$fn"]
     return Exp.fn(name, Exp.from_present(ret))
@@ -31,11 +32,11 @@ function from_object(obj: ut.Obj<any>): Exp.Exp {
   } else if (obj.hasOwnProperty("$grammar")) {
     return build_grammar(obj["$grammar"])
   } else {
-    throw new Error(`Unknown object: ${ut.inspect(obj)}`)
+    throw new Error(`Unknown object: ${inspect(obj)}`)
   }
 }
 
-function build_grammar(obj: ut.Obj<any>): Exp.Exp {
+function build_grammar(obj: Obj<any>): Exp.Exp {
   let name: string | undefined = undefined
   let choices = new Map()
 
@@ -58,7 +59,7 @@ function build_grammar(obj: ut.Obj<any>): Exp.Exp {
   if (name) {
     return Exp.grammar(name, choices)
   } else {
-    throw new Error(`can not find grammar name from obj: ${ut.inspect(obj)}`)
+    throw new Error(`can not find grammar name from obj: ${inspect(obj)}`)
   }
 }
 

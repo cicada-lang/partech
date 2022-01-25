@@ -1,5 +1,3 @@
-import util from "util"
-
 export function inspect(x: any): string {
-  return util.inspect(x, false, null, true)
+  return JSON.stringify(x, null, 2)
 }

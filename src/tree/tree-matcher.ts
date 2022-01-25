@@ -1,6 +1,6 @@
 import * as Span from "../span"
 import * as Tree from "../tree"
-import * as ut from "../ut"
+import { inspect } from "../ut/inspect"
 
 export function matcher<A>(choices: {
   [key: string]: (
@@ -27,7 +27,7 @@ export function matcher<A>(choices: {
       throw new Error(
         "Expecting Tree.node.\n" +
           `Tree.matcher can only match on node.\n` +
-          `- tree: ${ut.inspect(tree)}\n`
+          `- tree: ${inspect(tree)}\n`
       )
     }
   }

@@ -1,5 +1,5 @@
 import * as Token from "../token"
-import * as ut from "../ut"
+import { inspect } from "../ut/inspect"
 import * as Value from "../value"
 
 export function terminal_match(
@@ -18,7 +18,7 @@ export function terminal_match(
     default: {
       throw new Error(
         "Expecting value to be terminal.\n" +
-          `value: ${ut.inspect(Value.present(value))}\n`
+          `value: ${inspect(Value.present(value))}\n`
       )
     }
   }

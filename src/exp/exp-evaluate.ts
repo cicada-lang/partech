@@ -1,7 +1,7 @@
 import * as Env from "../env"
 import * as Exp from "../exp"
 import * as Mod from "../mod"
-import * as ut from "../ut"
+import { inspect } from "../ut/inspect"
 import * as Value from "../value"
 
 export function evaluate(
@@ -27,7 +27,7 @@ export function evaluate(
       if (result.length !== 1)
         throw new Error(
           `target of Exp.ap should evaluates only one value.\n` +
-            `target: ${ut.inspect(exp.target)}\n`
+            `target: ${inspect(exp.target)}\n`
         )
       const target = result[0]
       const args = exp.args.flatMap((arg) => evaluate(mod, env, arg))
@@ -71,7 +71,7 @@ function do_ap(
     return Value.Closure.apply(target.ret_cl, args)
   } else {
     throw new Error(
-      `expecting target to be Value.fn\n` + `target: ${ut.inspect(target)}\n`
+      `expecting target to be Value.fn\n` + `target: ${inspect(target)}\n`
     )
   }
 }

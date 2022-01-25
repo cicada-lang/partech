@@ -1,6 +1,6 @@
 import * as Exp from "../exp"
 import * as Mod from "../mod"
-import * as ut from "../ut"
+import { aline } from "../ut/aline"
 
 export function from_present(present: Mod.Present): Mod.Mod {
   const map = new Map()
@@ -14,7 +14,7 @@ export function from_present(present: Mod.Present): Mod.Mod {
       const exp = Exp.from_present(value)
       if (exp.kind === "Exp.grammar" && exp.name !== name)
         throw new Error(
-          ut.aline(`
+          aline(`
              |When bind a grammar to a name,
              |the grammar name must be the same as the name.
              |- grammar name: ${exp.name}

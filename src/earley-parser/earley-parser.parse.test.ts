@@ -2,7 +2,7 @@ import * as EarleyParser from "../earley-parser"
 import * as Mod from "../mod"
 import * as TableLexer from "../table-lexer"
 import * as Tree from "../tree"
-import * as ut from "../ut"
+import { assert_equal } from "../ut/assert-equal"
 
 const E = {
   $grammar: {
@@ -70,7 +70,7 @@ function assert_length(text: string, length: number): void {
     throw new Error("expecting Tree.node")
   }
 
-  ut.assert_equal(length_of_one_or_more(tree.body.start), length)
+  assert_equal(length_of_one_or_more(tree.body.start), length)
 }
 
 assert_length("(a)", 1)

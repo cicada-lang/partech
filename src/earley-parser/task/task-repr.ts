@@ -1,4 +1,6 @@
-import * as ut from "../../ut"
+import { color, ColorMode } from "../../ut/color"
+import { in_browser_p } from "../../ut/in-browser-p"
+import { assert_json_array } from "../../ut/json"
 import * as Value from "../../value"
 import * as Task from "../task"
 
@@ -6,9 +8,9 @@ import * as Task from "../task"
 // <task> = <grammar>:<choice>@<index> -> <part> ...
 // <part> = <grammar>:<choice>@<index> | <grammar>@<index>
 
-const color_mode: ut.ColorMode = ut.in_browser_p() ? "html" : "escape-code"
+const color_mode: ColorMode = in_browser_p() ? "html" : "escape-code"
 
-const POINTER = ut.color("> ", { mode: color_mode, color: "red" })
+const POINTER = color("> ", { mode: color_mode, color: "red" })
 
 export function repr(task: Task.Task): string {
   let s = task.grammar_name + ":" + task.choice_name + "@" + task.index + " -> "
@@ -47,7 +49,7 @@ function repr_part(part: { name?: string; value: Value.Value }): string {
   } else if (present instanceof Array) {
     s += JSON.stringify(present)
   } else if (present.hasOwnProperty("$pattern")) {
-    const [pattern_name] = ut.assert_json_array(present["$pattern"])
+    const [pattern_name] = assert_json_array(present["$pattern"])
     s += pattern_name
   } else {
     s += JSON.stringify(present)

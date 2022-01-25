@@ -1,7 +1,7 @@
 import * as Exp from "../exp"
-import * as ut from "../ut"
+import { Obj } from "../ut/obj"
 
-export type Present = ut.Obj<any> | Array<any> | string
+export type Present = Obj<any> | Array<any> | string
 
 export function present(exp: Exp.Exp): Present {
   switch (exp.kind) {

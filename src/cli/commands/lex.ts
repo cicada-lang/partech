@@ -2,7 +2,7 @@ import fs from "fs"
 import path from "path"
 import * as lexers from "../../lexers"
 import * as TableLexer from "../../table-lexer"
-import * as ut from "../../ut"
+import { write_object } from "../../ut/write-object"
 
 export const command = "lex <input>"
 
@@ -25,5 +25,5 @@ export const handler = async (argv: Argv) => {
     : lexers.common
   const text = await fs.promises.readFile(argv.input, "utf8")
   const tokens = lexer.lex(text)
-  ut.write_object(tokens, argv.output)
+  write_object(tokens, argv.output)
 }

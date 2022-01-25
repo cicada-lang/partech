@@ -1,6 +1,6 @@
 import * as Span from "../span"
 import * as Token from "../token"
-import * as ut from "../ut"
+import { Obj } from "../ut/obj"
 
 export type Tree = node | leaf
 
@@ -9,7 +9,7 @@ export type Head = {
   kind: string
 }
 
-export type Body = ut.Obj<Tree>
+export type Body = Obj<Tree>
 
 export type node = {
   kind: "Tree.node"

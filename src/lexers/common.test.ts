@@ -1,30 +1,30 @@
 import * as pt from ".."
-import * as ut from "../ut"
+import { assert_equal } from "../ut/assert-equal"
 
 // NOTE parens_check
 
 {
   const text = "(())"
   const result = pt.lexers.common.parens_check(text)
-  ut.assert_equal(result.kind, "balance")
+  assert_equal(result.kind, "balance")
 }
 
 {
   const text = "(()"
   const result = pt.lexers.common.parens_check(text)
-  ut.assert_equal(result.kind, "lack")
+  assert_equal(result.kind, "lack")
 }
 
 {
   const text = "((()])"
   const result = pt.lexers.common.parens_check(text)
-  ut.assert_equal(result.kind, "mismatch")
+  assert_equal(result.kind, "mismatch")
 }
 
 {
   const text = "((())))"
   const result = pt.lexers.common.parens_check(text)
-  ut.assert_equal(result.kind, "excess")
+  assert_equal(result.kind, "excess")
 }
 
 // NOTE parens_depth
@@ -32,17 +32,17 @@ import * as ut from "../ut"
 {
   const text = "(())"
   const depth = pt.lexers.common.parens_depth(text)
-  ut.assert_equal(depth, 0)
+  assert_equal(depth, 0)
 }
 
 {
   const text = "(("
   const depth = pt.lexers.common.parens_depth(text)
-  ut.assert_equal(depth, 2)
+  assert_equal(depth, 2)
 }
 
 {
   const text = "(()"
   const depth = pt.lexers.common.parens_depth(text)
-  ut.assert_equal(depth, 1)
+  assert_equal(depth, 1)
 }

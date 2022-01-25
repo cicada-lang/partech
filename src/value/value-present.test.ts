@@ -2,7 +2,7 @@ import * as Env from "../env"
 import * as Exp from "../exp"
 import * as Mod from "../mod"
 import * as mods from "../mods"
-import * as ut from "../ut"
+import { assert_equal } from "../ut/assert-equal"
 import * as Value from "../value"
 
 function test(
@@ -14,9 +14,9 @@ function test(
 ): void {
   const exp = Exp.from_present(exp_present)
   const values = Exp.evaluate(mod, env, exp)
-  ut.assert_equal(values.length, 1)
+  assert_equal(values.length, 1)
   const value = values[0]
-  ut.assert_equal(Value.present(value, opts), value_present)
+  assert_equal(Value.present(value, opts), value_present)
 }
 
 {

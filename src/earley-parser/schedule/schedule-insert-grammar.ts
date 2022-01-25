@@ -1,5 +1,5 @@
 import { ParsingError } from "../../errors"
-import * as ut from "../../ut"
+import { inspect } from "../../ut/inspect"
 import * as Value from "../../value"
 import * as Schedule from "../schedule"
 import * as Task from "../task"
@@ -22,7 +22,7 @@ export function insert_grammar(
     const span = token.span
     throw new ParsingError(
       "expecting grammar to be Value.grammar.\n" +
-        `grammar: ${ut.inspect(Value.present(grammar))}\n`,
+        `grammar: ${inspect(Value.present(grammar))}\n`,
       { span }
     )
   }

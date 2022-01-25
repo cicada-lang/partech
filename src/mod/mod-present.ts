@@ -1,8 +1,8 @@
 import * as Exp from "../exp"
 import * as Mod from "../mod"
-import * as ut from "../ut"
+import { Obj } from "../ut/obj"
 
-export type Present = ut.Obj<Exp.Present> | Mod.Metadata
+export type Present = Obj<Exp.Present> | Mod.Metadata
 
 export function present(mod: Mod.Mod): Present {
   const present: Present = {}

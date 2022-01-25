@@ -1,8 +1,8 @@
 import * as Exp from "../exp"
-import * as ut from "../ut"
+import { Json } from "../ut/json"
 
 export type Metadata = {
-  [key: string]: ut.Json
+  [key: string]: Json
 }
 
 export type Mod = {

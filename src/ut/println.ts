@@ -1,5 +1,3 @@
-import util from "util"
-
 export function println(x: any): void {
-  console.log(util.inspect(x, false, null, true))
+  console.log(JSON.stringify(x, null, 2))
 }
