@@ -11,6 +11,15 @@ export class ParsingError extends BaseError {
     this.span = opts.span
   }
 
+  report(context: string) {
+    return [
+      `I found syntax error in code:`,
+      ``,
+      Span.report(this.span, context),
+      this.concise_message,
+    ].join("\n")
+  }
+
   get concise_message(): string {
     const lines = this.message.split("\n")
     if (lines.length > 7) {
