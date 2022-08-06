@@ -53,6 +53,10 @@ Example parse tree, in which `name` and `kind` properties give us ADT-like data.
 Our syntax for CFG can be viewed as decorated ADT,
 ADT decorated by terminals and ignored non-terminals.
 
+- picked non-terminals are arguments of the ADT constructor.
+
+"fff"
+
 ```
 {
   name: one_or_more,
@@ -81,6 +85,40 @@ ADT decorated by terminals and ignored non-terminals.
         }
       }
     }
+  }
+}
+```
+
+```
+<one_or_more.one>"f"</one_or_more.one>
+
+<one_or_more.more>
+  "f"
+  <one_or_more.more>
+    "f"
+    <one_or_more.one>
+      "f"
+    </one_or_more.one>
+  </one_or_more.more>
+</one_or_more.more>
+```
+
+```
+one_or_more.one(value: "f")
+
+one_or_more.more(head: "f",
+  tail: one_or_more.more(head: "f",
+    tail: one_or_more.one(value: "f")))
+```
+
+```
+one_or_more.one { value: "f" }
+
+one_or_more.more {
+  head: "f",
+  tail: one_or_more.more {
+    head: "f",
+    tail: one_or_more.one { value: "f" }
   }
 }
 ```
