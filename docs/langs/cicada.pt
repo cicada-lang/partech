@@ -1,0 +1,128 @@
+grammar operator {
+  var -> (name: identifier)
+  ap -> (target: operator) (arg_entries_group: one_or_more("(" arg_entries ")"))
+  sequence_begin -> (sequence: sequence)
+  car -> "car" "(" (target: exp) ")"
+  cdr -> "cdr" "(" (target: exp) ")"
+  dot_field -> (target: operator) "." (name: identifier)
+  dot_method -> (target: operator) "." (name: identifier)
+    (arg_entries_group: one_or_more("(" arg_entries ")"))
+  recursion ->
+    "recursion" "(" (target: exp) ")"
+    "{" (case_entries: zero_or_more(case_entry)) "}"
+  induction ->
+    "induction" "(" (target: exp) ")"
+    "{" "motive" (motive: exp) (case_entries: zero_or_more(case_entry)) "}"
+}
+
+grammar operand {
+  pi -> "(" (bindings: "bindings") ")" "-" ">" (ret_t: exp)
+  pi_forall -> "forall" "(" (bindings: bindings) ")" (ret_t: exp)
+  fn -> "(" (names: names) ")" "=" ">" (ret: exp)
+  fn_function -> "function" "(" (names: names) ")" (ret: exp)
+  sigma_exists -> "exists" "(" (bindings: simple_bindings) ")" (cdr_t: exp)
+  cons -> "cons" "(" (car: exp) "," (cdr: exp) ")"
+  cls -> "class" "{" (entries: zero_or_more(cls_entry)) "}"
+  ext -> "class" "extends" (parent: operator) "{" (entries: zero_or_more(cls_entry)) "}"
+  obj -> "{" (properties: zero_or_more(property ","))
+    (last_property: property) optional(",") "}"
+  same_as_chart -> "same_as_chart" "(" (t: exp) ")" "[" (exps: exps) "]"
+  quote -> (value: string)
+}
+
+grammar exp {
+  operator -> (operator: operator)
+  operand -> (operand: operand)
+}
+
+grammar sequence {
+  sequence -> "{" (entries: zero_or_more(sequence_entry)) "return" (ret: exp) "}"
+}
+
+grammar sequence_entry {
+  let -> "let" (name: identifier) "=" (exp: exp) optional(";")
+  let_the -> "let" (name: identifier) ":" (t: exp) "=" (exp: exp) optional(";")
+  check -> "check" (exp: exp) ":" (t: exp) optional(";")
+  let_fn -> "function" (name: identifier) "(" (bindings: bindings) ")"
+    ":" (ret_t: exp)
+    (sequence: sequence) optional(";")
+}
+
+grammar cls_entry {
+  field_demanded -> (name: identifier) ":" (t: exp) optional(",")
+  field_fulfilled -> (name: identifier) ":" (t: exp) "=" (exp: exp) optional(",")
+  method_demanded -> (name: identifier) "(" (bindings: bindings) ")"
+    ":" (ret_t: exp) optional(",")
+  method_fulfilled -> (name: identifier) "(" (bindings: bindings) ")"
+    ":" (ret_t: exp) (sequence: sequence) optional(",")
+}
+
+grammar simple_bindings = {
+  simple_bindings ->
+    (entries: zero_or_more(simple_binding ",") )
+    (last_entry: simple_binding)
+    optional(",")
+}
+
+grammar simple_binding {
+  named -> (name: identifier) ":" (exp: exp)
+}
+
+grammar bindings {
+  bindings ->
+    (entries: zero_or_more(binding ","))
+    (last_entry: binding)
+    optional(",")
+}
+
+grammar binding {
+  nameless -> (exp: exp)
+  named -> (name: identifier) ":" (exp: exp)
+  implicit -> "implicit" (name: identifier) ":" (exp: exp)
+  vague -> "vague" (name: identifier) ":" (exp: exp)
+}
+
+grammar names {
+  names ->
+    (entries: zero_or_more(name_entry ","))
+    (last_entry: name_entry)
+    optional(",")
+}
+
+grammar name_entry {
+  name_entry -> (name: identifier)
+  implicit_name_entry -> "implicit" (name: identifier)
+  vague_name_entry -> "vague" (name: identifier)
+}
+
+grammar exps {
+  exps ->
+    (entries: zero_or_more(exp ","))
+    (last_entry: exp)
+    optional(",")
+}
+
+grammar arg_entries {
+  arg_entries ->
+    (entries: zero_or_more(arg_entry ","))
+    (last_entry: arg_entry)
+    optional(",")
+}
+
+grammar arg_entry {
+  plain -> (arg: exp)
+  implicit -> "implicit" (arg: exp)
+  vague -> "vague" (arg: exp)
+}
+
+grammar case_entry {
+  normal -> "case" (name: identifier) (exp: exp)
+  nullary -> "case" (name: identifier) "=" ">" (exp: exp)
+}
+
+grammar property {
+  field_shorthand -> (name: identifier)
+  field -> (name: identifier) ":" (exp: exp)
+  method -> (name: identifier) "(" (names: names) ")" (sequence: sequence)
+  spread -> "." "." "." (exp: exp)
+}

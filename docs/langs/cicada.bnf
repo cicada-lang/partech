@@ -1,0 +1,31 @@
+<operator.var> := <identifier bind="name">
+<operator.ap> := <operator bind="target">
+  <one-or-more bind="arg-entries-group"> ( <arg-entries> ) </one-or-more>
+<operator.sequence-begin> := <sequence bind="sequence">
+<operator.car> := car ( <exp bind="target"> )
+<operator.cdr> := cdr ( <exp bind="target"> )
+<operator.dot-field> := <operator bind="target"> . <identifier bind="name">
+<operator.dot-method> := <operator bind="target"> . <identifier bind="name">
+  <one-or-more bind="arg-entries-group"> ( <arg-entries> ) </one-or-more>
+<operator.recursion> := recursion ( <exp bind="target"> )
+  { <zero-or-more bind="case-entries"> ( <case-entry> ) </zero-or-more> }
+<operator.induction> := induction ( <exp bind="target"> )
+  { motive <exp bind="motive">
+     <zero-or-more bind="case-entries"> ( <case-entry> ) </zero-or-more>
+  }
+
+<operator.var> := <identifier #name>
+<operator.ap> := <operator #target>
+  <one-or-more #arg-entries-group> ( <arg-entries> ) </one-or-more>
+<operator.sequence-begin> := <sequence #sequence>
+<operator.car> := car ( <exp #target> )
+<operator.cdr> := cdr ( <exp #target> )
+<operator.dot-field> := <operator #target> . <identifier #name>
+<operator.dot-method> := <operator #target> . <identifier #name>
+  <one-or-more #arg-entries-group> ( <arg-entries> ) </one-or-more>
+<operator.recursion> := recursion ( <exp #target> )
+  { <zero-or-more #case-entries> ( <case-entry> ) </zero-or-more> }
+<operator.induction> := induction ( <exp #target> )
+  { motive <exp #motive>
+     <zero-or-more #case-entries> ( <case-entry> ) </zero-or-more>
+  }

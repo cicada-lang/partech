@@ -2,6 +2,8 @@
 
 Parsing Techniques
 
+A language for writing grammar and generate parser, embedded in JavaScript/TypeScript.
+
 ## Community
 
 Contributions are welcome, see [current TODO list](TODO.md) for tasks. <br>
