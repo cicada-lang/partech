@@ -20,7 +20,7 @@ export function color(
       if (opts.color === "red")
         text = `<span style="color: red;">${text}</span>`
       if (opts.background === "red")
-        text = `<span style="background: red;">${text}</span>`
+        text = `<span style="border-bottom: 2px solid red;">${text}</span>`
       return text
     }
     default: {
