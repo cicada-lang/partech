@@ -16,6 +16,7 @@ export class ParsingError extends BaseError {
       `I found syntax error in code:`,
       ``,
       Span.report(this.span, context),
+      ``,
       this.concise_message,
     ].join("\n")
   }
