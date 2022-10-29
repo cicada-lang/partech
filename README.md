@@ -16,7 +16,8 @@ Install the package:
 npm install @cicada-lang/partech
 ```
 
-TODO
+TODO This package is used in many languages of cicada project,
+but the API of this package is not stable yet.
 
 ## Examples
 
