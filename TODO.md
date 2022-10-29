@@ -1,5 +1,4 @@
-tests/utils.ts -- `parseGrammar`
-tests/utils.ts -- `parseGrammarFail` -- output no color
+tests/utils.ts -- `createParser`
 
 json.test.ts
 list-of-a.test.ts

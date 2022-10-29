@@ -1,5 +1,5 @@
 import { expect, test } from "vitest"
-import * as pt from ".."
+import { createParser } from "./utils"
 
 const grammars = {
   ab: {
@@ -26,12 +26,7 @@ const grammars = {
   },
 }
 
-const parse = pt.gen_parse({
-  preprocess: pt.preprocess.erase_comment,
-  lexer: pt.lexers.common,
-  grammar: pt.grammar_start(grammars, "ab"),
-  matcher: (tree) => tree,
-})
+const parse = createParser(grammars, "ab")
 
 test("equal number of 'a's and 'b's", () => {
   expect(parse("a a b b")).toMatchInlineSnapshot(`
