@@ -35,5 +35,6 @@ const grammars = {
 const parse = createParser(grammars, "tom_dick_and_harry")
 
 test("tom dick and harry", () => {
-  expect
+  expect(parse("tom, dick and harry"))
+  expect(() => parse("tom, dick, harry")).toThrow()
 })

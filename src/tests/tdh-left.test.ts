@@ -35,5 +35,6 @@ const grammars = {
 const parse = createParser(grammars, "tdh")
 
 test("tdh_left -- left regular grammar", () => {
-  expect
+  expect(parse("t,d&h"))
+  expect(() => parse("t,d,h")).toThrow()
 })
