@@ -1,8 +1,12 @@
 # Partech
 
-Parsing Techniques
+Parsing Techniques -- A language for writing grammar and generate parser.
 
-A language for writing grammar and generate parser, embedded in JavaScript/TypeScript.
+- Named after Dick Grune and Ceriel J.H. Jacobs' book ["Parsing Techniques -- A Practical Guide"](https://www.amazon.com/Parsing-Techniques-Practical-Monographs-Computer/dp/1441919015).
+- Embedded in JavaScript/TypeScript.
+- Inspired by [Invisible XML](https://homepages.cwi.nl/~steven/ixml/).
+- Implements [Earley parser](https://en.wikipedia.org/wiki/Earley_parser),
+  which can handle the full [CFG](https://en.wikipedia.org/wiki/Context-free_grammar).
 
 ## Usages
 
@@ -17,6 +21,14 @@ TODO
 ## Examples
 
 TODO
+
+## Thanks
+
+Thank you, Noam Chomsky, for [Generative grammar](https://en.wikipedia.org/wiki/Generative_grammar) and [Chomsky hierarchy](https://en.wikipedia.org/wiki/Chomsky_hierarchy).
+
+Thank you, Dick Grune and Ceriel J.H. Jacobs, for writing a great textbook about parsing.
+
+Thank you, [Steven Pemberton](https://homepages.cwi.nl/~steven/), for your works about XML and designing [the ABC programming language](<https://en.wikipedia.org/wiki/ABC_(programming_language)>).
 
 ## Development
 
