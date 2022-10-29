@@ -1,6 +1,6 @@
 import * as Exp from "../exp"
-import { Json } from "../ut/json"
-import { Obj } from "../ut/obj"
+import { Json } from "../utils/json"
+import { Obj } from "../utils/obj"
 import * as Value from "../value"
 
 export type Present = Obj<Json> | Array<Json> | string

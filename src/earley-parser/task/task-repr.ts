@@ -1,6 +1,6 @@
-import { color, ColorMode } from "../../ut/color"
-import { in_browser_p } from "../../ut/in-browser-p"
-import { assert_json_array } from "../../ut/json"
+import { color, ColorMode } from "../../utils/color"
+import { in_browser_p } from "../../utils/in-browser-p"
+import { assert_json_array } from "../../utils/json"
 import * as Value from "../../value"
 import * as Task from "../task"
 

@@ -1,5 +1,5 @@
 import * as Exp from "../exp"
-import { Json } from "../ut/json"
+import { Json } from "../utils/json"
 
 export type Metadata = {
   [key: string]: Json

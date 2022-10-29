@@ -1,5 +1,5 @@
 import * as Exp from "../exp"
-import { Obj } from "../ut/obj"
+import { Obj } from "../utils/obj"
 
 export type Present = Obj<any> | Array<any> | string
 

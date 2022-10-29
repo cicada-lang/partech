@@ -1,6 +1,6 @@
 import * as Span from "../span"
 import * as Tree from "../tree"
-import { inspect } from "../ut/inspect"
+import { inspect } from "../utils/inspect"
 
 export function matcher<A>(choices: {
   [key: string]: (

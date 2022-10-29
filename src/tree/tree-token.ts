@@ -1,6 +1,6 @@
 import * as Token from "../token"
 import * as Tree from "../tree"
-import { inspect } from "../ut/inspect"
+import { inspect } from "../utils/inspect"
 
 export function token(tree: Tree.Tree): Token.Token {
   if (tree.kind === "Tree.leaf") {

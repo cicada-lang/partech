@@ -1,7 +1,7 @@
 import * as Span from "../span"
-import { color, ColorMode } from "../ut/color"
-import { in_browser_p } from "../ut/in-browser-p"
-import { interval_overlap_p } from "../ut/interval"
+import { color, ColorMode } from "../utils/color"
+import { in_browser_p } from "../utils/in-browser-p"
+import { interval_overlap_p } from "../utils/interval"
 
 export function report(span: Span.Span, context: string): string {
   let s = repr_in_context(span, context)

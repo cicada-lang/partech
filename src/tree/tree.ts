@@ -1,6 +1,6 @@
 import * as Span from "../span"
 import * as Token from "../token"
-import { Obj } from "../ut/obj"
+import { Obj } from "../utils/obj"
 
 export type Tree = node | leaf
 

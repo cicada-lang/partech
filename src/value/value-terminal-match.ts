@@ -1,5 +1,5 @@
 import * as Token from "../token"
-import { inspect } from "../ut/inspect"
+import { inspect } from "../utils/inspect"
 import * as Value from "../value"
 
 export function terminal_match(

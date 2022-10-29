@@ -1,6 +1,6 @@
 import * as Exp from "../exp"
 import * as Mod from "../mod"
-import { aline } from "../ut/aline"
+import { aline } from "../utils/aline"
 
 export function from_present(present: Mod.Present): Mod.Mod {
   const map = new Map()

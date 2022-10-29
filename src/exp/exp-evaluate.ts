@@ -1,7 +1,7 @@
 import * as Env from "../env"
 import * as Exp from "../exp"
 import * as Mod from "../mod"
-import { inspect } from "../ut/inspect"
+import { inspect } from "../utils/inspect"
 import * as Value from "../value"
 
 export function evaluate(

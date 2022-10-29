@@ -1,6 +1,6 @@
 import * as Exp from "../exp"
-import { inspect } from "../ut/inspect"
-import { Obj } from "../ut/obj"
+import { inspect } from "../utils/inspect"
+import { Obj } from "../utils/obj"
 
 export function from_present(present: Exp.Present): Exp.Exp {
   if (typeof present === "string") return from_string(present)

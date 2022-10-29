@@ -1,7 +1,7 @@
 import * as EarleyParser from "../earley-parser"
 import * as Token from "../token"
 import * as Tree from "../tree"
-import { inspect } from "../ut/inspect"
+import { inspect } from "../utils/inspect"
 import * as Value from "../value"
 import * as Schedule from "./schedule"
 

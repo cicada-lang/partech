@@ -24,7 +24,7 @@ export function color(
       return text
     }
     default: {
-      console.log(`[ut.color] unknown mode: ${opts.mode}`)
+      console.log(`[utils.color] unknown mode: ${opts.mode}`)
       return text
     }
   }
