@@ -1,4 +1,3 @@
-remove command line interface
 use vitest to test:ts -- instead using test-runner to test:js
 use vitest to test:snapshot -- instead using test-runner to test:snapshot
 use vitest to test parse
