@@ -1,4 +1,5 @@
 import { expect, test } from "vitest"
+import { createParser } from "./utils"
 import * as pt from ".."
 
 const grammars = {
@@ -14,12 +15,7 @@ const grammars = {
   },
 }
 
-const parse = pt.gen_parse({
-  preprocess: pt.preprocess.erase_comment,
-  lexer: pt.lexers.common,
-  grammar: pt.grammar_start(grammars, "sexp"),
-  matcher: (tree) => tree,
-})
+const parse = createParser(grammars, "sexp")
 
 test("Symbol expression (a.k.a. sexp) -- implemented by zero_or_more", () => {
   expect

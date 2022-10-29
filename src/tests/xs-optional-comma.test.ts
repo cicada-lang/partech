@@ -1,4 +1,5 @@
 import { expect, test } from "vitest"
+import { createParser } from "./utils"
 import * as pt from ".."
 
 const grammars = {
@@ -12,12 +13,7 @@ const grammars = {
   },
 }
 
-const parse = pt.gen_parse({
-  preprocess: pt.preprocess.erase_comment,
-  lexer: pt.lexers.common,
-  grammar: pt.grammar_start(grammars, "xs"),
-  matcher: (tree) => tree,
-})
+const parse = createParser(grammars, "xs")
 
 test("zero or more 'x's -- grammar with epsilon and optional", () => {
   expect
