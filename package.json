@@ -10,18 +10,11 @@
     "build": "npx tsc",
     "build:watch": "npx tsc --watch",
     "format": "npx prettier src --write",
-    "test:js": "test-runner test node 'lib/**/*.test.js'",
-    "test:snapshot": "test-runner snapshot node 'lib/**/*.snapshot.js' --extern snapshot",
-    "test": "npm run test:js && npm run test:snapshot"
-  },
-  "devDependencies": {
-    "@types/deep-diff": "^1.0.1",
-    "@types/js-yaml": "^4.0.5",
-    "@types/node": "^18.11.7",
-    "@xieyuheng/test-runner": "^0.2.7",
-    "prettier": "^2.7.1",
-    "prettier-plugin-organize-imports": "^3.1.1",
-    "typescript": "^4.8.4"
+    "test:ts": "vitest --dir src --threads false --run",
+    "test:watch": "vitest --dir src --threads false",
+    "test:coverage": "vitest --dir src --threads false --run --coverage ",
+    "test:gui": "vitest --dir src --threads false --ui",
+    "test": "npm run test:ts"
   },
   "dependencies": {
     "deep-diff": "^1.0.2",
@@ -30,6 +23,19 @@
     "picocolors": "^1.0.0",
     "readdirp": "^3.6.0",
     "regexp-match-indices": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/deep-diff": "^1.0.1",
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^18.11.7",
+    "@xieyuheng/test-runner": "^0.2.7",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.1.1",
+    "typescript": "^4.8.4",
+    "@vitest/coverage-c8": "^0.24.3",
+    "@vitest/coverage-istanbul": "^0.24.3",
+    "@vitest/ui": "^0.24.3",
+    "vitest": "^0.24.3"
   },
   "license": "GPL-3.0-or-later"
 }

@@ -1,4 +1,4 @@
-import assert from "assert"
+import { expect, test } from "vitest"
 import * as EarleyParser from "../earley-parser"
 import * as Mod from "../mod"
 import * as TableLexer from "../table-lexer"
@@ -29,16 +29,18 @@ export const parser = EarleyParser.create(grammar)
 export const lexer = TableLexer.create([["char", /(.)/]])
 
 function ok(test: string): void {
-  assert(parser.recognize(lexer.lex(test)))
+  expect(parser.recognize(lexer.lex(test))).toBe(true)
 }
 
 function oh(test: string): void {
-  assert(!parser.recognize(lexer.lex(test)))
+  expect(!parser.recognize(lexer.lex(test))).toBe(true)
 }
 
-ok("a")
-ok("a-a")
-ok("a-a+a")
+test("recognize", () => {
+  ok("a")
+  ok("a-a")
+  ok("a-a+a")
 
-oh("a-a+b")
-oh("a-a++")
+  oh("a-a+b")
+  oh("a-a++")
+})

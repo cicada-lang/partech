@@ -1,11 +1,11 @@
+import { expect, test } from "vitest"
 import * as Env from "../env"
 import * as Exp from "../exp"
 import * as Mod from "../mod"
 import * as mods from "../mods"
-import { assert_equal } from "../ut/assert-equal"
 import * as Value from "../value"
 
-function test(
+function testPresent(
   mod: Mod.Mod,
   env: Env.Env,
   exp_present: any,
@@ -14,18 +14,18 @@ function test(
 ): void {
   const exp = Exp.from_present(exp_present)
   const values = Exp.evaluate(mod, env, exp)
-  assert_equal(values.length, 1)
+  expect(values.length).toBe(1)
   const value = values[0]
-  assert_equal(Value.present(value, opts), value_present)
+  expect(Value.present(value, opts)).toEqual(value_present)
 }
 
-{
+test("present", () => {
   const mod = Mod.from_present(mods.exp)
   const env = new Map()
 
   // Exp.v
 
-  test(
+  testPresent(
     mod,
     env,
     "exp",
@@ -49,7 +49,7 @@ function test(
 
   // Exp.ap
 
-  test(
+  testPresent(
     mod,
     env,
     { $ap: ["one_or_more", '"("', "exp", '")"'] },
@@ -63,7 +63,7 @@ function test(
     { on_grammar: "as_exp" },
   )
 
-  test(
+  testPresent(
     mod,
     env,
     { $ap: ["one_or_more", '"("', "exp", '")"'] },
@@ -78,4 +78,4 @@ function test(
     },
     { on_grammar: "force_one_step" },
   )
-}
+})

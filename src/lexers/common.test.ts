@@ -1,48 +1,15 @@
+import { expect, test } from "vitest"
 import * as pt from ".."
-import { assert_equal } from "../ut/assert-equal"
 
-// NOTE parens_check
+test("parens_check", () => {
+  expect(pt.lexers.common.parens_check("(())").kind).toBe("balance")
+  expect(pt.lexers.common.parens_check("(()").kind).toBe("lack")
+  expect(pt.lexers.common.parens_check("((()])").kind).toBe("mismatch")
+  expect(pt.lexers.common.parens_check("((())))").kind).toBe("excess")
+})
 
-{
-  const text = "(())"
-  const result = pt.lexers.common.parens_check(text)
-  assert_equal(result.kind, "balance")
-}
-
-{
-  const text = "(()"
-  const result = pt.lexers.common.parens_check(text)
-  assert_equal(result.kind, "lack")
-}
-
-{
-  const text = "((()])"
-  const result = pt.lexers.common.parens_check(text)
-  assert_equal(result.kind, "mismatch")
-}
-
-{
-  const text = "((())))"
-  const result = pt.lexers.common.parens_check(text)
-  assert_equal(result.kind, "excess")
-}
-
-// NOTE parens_depth
-
-{
-  const text = "(())"
-  const depth = pt.lexers.common.parens_depth(text)
-  assert_equal(depth, 0)
-}
-
-{
-  const text = "(("
-  const depth = pt.lexers.common.parens_depth(text)
-  assert_equal(depth, 2)
-}
-
-{
-  const text = "(()"
-  const depth = pt.lexers.common.parens_depth(text)
-  assert_equal(depth, 1)
-}
+test("parens_depth", () => {
+  expect(pt.lexers.common.parens_depth("(())")).toBe(0)
+  expect(pt.lexers.common.parens_depth("((")).toBe(2)
+  expect(pt.lexers.common.parens_depth("(()")).toBe(1)
+})

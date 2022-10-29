@@ -1,8 +1,8 @@
+import { expect, test } from "vitest"
 import * as EarleyParser from "../earley-parser"
 import * as Mod from "../mod"
 import * as TableLexer from "../table-lexer"
 import * as Tree from "../tree"
-import { assert_equal } from "../ut/assert-equal"
 
 const E = {
   $grammar: {
@@ -64,21 +64,23 @@ function length_of_one_or_more(tree: Tree.Tree): number {
   }
 }
 
-function assert_length(text: string, length: number): void {
+function assertLength(text: string, length: number): void {
   const tree = parser.parse(lexer.lex(text))
   if (tree.kind !== "Tree.node") {
     throw new Error("expecting Tree.node")
   }
 
-  assert_equal(length_of_one_or_more(tree.body.start), length)
+  expect(length_of_one_or_more(tree.body.start)).toBe(length)
 }
 
-assert_length("(a)", 1)
-assert_length("(a)(a)", 2)
-assert_length("(a)(a)(a)", 3)
-assert_length("(a-a)", 1)
-assert_length("(a-a+a)", 1)
-assert_length("(a)(a)(a)(a)(a)(a)(a)(a)", 8)
-assert_length("(a-a)(a-a)(a-a)", 3)
-assert_length("(a-a+a)(a-a+a)(a-a+a)", 3)
-assert_length("(a)(a-a)(a-a+a)", 3)
+test("parse", () => {
+  assertLength("(a)", 1)
+  assertLength("(a)(a)", 2)
+  assertLength("(a)(a)(a)", 3)
+  assertLength("(a-a)", 1)
+  assertLength("(a-a+a)", 1)
+  assertLength("(a)(a)(a)(a)(a)(a)(a)(a)", 8)
+  assertLength("(a-a)(a-a)(a-a)", 3)
+  assertLength("(a-a+a)(a-a+a)(a-a+a)", 3)
+  assertLength("(a)(a-a)(a-a+a)", 3)
+})
