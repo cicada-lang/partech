@@ -1,6 +1,6 @@
 // tdh_left -- left regular grammar
 
-module.exports = {
+export const grammars = {
   $start: "tdh",
 
   tdh: {

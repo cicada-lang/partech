@@ -1,8 +1,8 @@
 // zero or more "x"s -- grammar with epsilon and optional
 
-const pt = require("../..")
+import * as pt from ".."
 
-module.exports = {
+export const grammars = {
   optional: pt.grammars.optional,
 
   $start: "xs",

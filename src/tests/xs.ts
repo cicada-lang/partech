@@ -1,6 +1,6 @@
 // zero or more "x"s -- grammar with epsilon
 
-module.exports = {
+export const grammars = {
   $start: "xs",
 
   xs: {

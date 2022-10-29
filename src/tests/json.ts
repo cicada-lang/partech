@@ -1,6 +1,6 @@
 // Old familiar JSON
 
-const pt = require("../..")
+import * as pt from ".."
 
 module.exports = {
   one_or_more: pt.grammars.one_or_more,

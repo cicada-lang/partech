@@ -1,8 +1,8 @@
 // line of more then one dashes
 
-const pt = require("../..")
+import * as pt from ".."
 
-module.exports = {
+export const grammars = {
   one_or_more: pt.grammars.one_or_more,
 
   $start: "dashline",

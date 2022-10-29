@@ -1,8 +1,8 @@
 // tom dick and harry
 
-const pt = require("../..")
+import * as pt from ".."
 
-module.exports = {
+export const grammars = {
   one_or_more: pt.grammars.one_or_more,
 
   $start: "tom_dick_and_harry",

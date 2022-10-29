@@ -1,8 +1,8 @@
 // Symbol expression (a.k.a. sexp) -- implemented by one_or_more
 
-const pt = require("../..")
+import * as pt from ".."
 
-module.exports = {
+export const grammars = {
   one_or_more: pt.grammars.one_or_more,
 
   $start: "sexp",

@@ -1,6 +1,6 @@
 // list of a -- grammar with epsilon
 
-module.exports = {
+export const grammars = {
   $start: "list_of_a",
 
   list_of_a: {

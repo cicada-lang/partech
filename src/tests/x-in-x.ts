@@ -1,6 +1,6 @@
 // x in x
 
-module.exports = {
+export const grammars = {
   $start: "s",
 
   s: {
