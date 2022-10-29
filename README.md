@@ -24,7 +24,7 @@ TODO
 
 ## Thanks
 
-Thank you, Noam Chomsky, for [Generative grammar](https://en.wikipedia.org/wiki/Generative_grammar) and [Chomsky hierarchy](https://en.wikipedia.org/wiki/Chomsky_hierarchy).
+Thank you, [Noam Chomsky](https://en.wikipedia.org/wiki/Noam_Chomsky), for [Generative grammar](https://en.wikipedia.org/wiki/Generative_grammar) and [Chomsky hierarchy](https://en.wikipedia.org/wiki/Chomsky_hierarchy).
 
 Thank you, Dick Grune and Ceriel J.H. Jacobs, for writing a great textbook about parsing.
 
