@@ -55,7 +55,7 @@ export const handler = async (argv: Argv) => {
   } else {
     throw new Error(
       `Expecting mod.metadata.start to be string.\n` +
-        `mod.metadata: ${inspect(mod.metadata)}\n`
+        `mod.metadata: ${inspect(mod.metadata)}\n`,
     )
   }
 }

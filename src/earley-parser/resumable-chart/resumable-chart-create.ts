@@ -2,7 +2,7 @@ import * as Token from "../../token"
 import * as ResumableChart from "../resumable-chart"
 
 export function create(
-  tokens: Array<Token.Token>
+  tokens: Array<Token.Token>,
 ): ResumableChart.ResumableChart {
   const length = tokens.length + 1
 

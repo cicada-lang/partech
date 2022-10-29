@@ -3,7 +3,7 @@ import * as Span from "../span"
 export function span_closure(spans: Array<Span.Span>): Span.Span {
   if (spans.length === 0) {
     throw new Error(
-      "I can not calculate the closure of empty array of spans, at least one span is needed."
+      "I can not calculate the closure of empty array of spans, at least one span is needed.",
     )
   }
 

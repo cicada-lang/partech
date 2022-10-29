@@ -15,7 +15,7 @@ export const DEFAULT_OPTS = {
 
 export function run(
   schedule: Schedule.Schedule,
-  opts: Opts = DEFAULT_OPTS
+  opts: Opts = DEFAULT_OPTS,
 ): void {
   while (true) {
     if (opts.schedule?.verbose) {
@@ -29,7 +29,7 @@ export function run(
     if (opts.task?.verbose) {
       console.log(
         Task.finished_p(task) ? "[resume from]:" : "   [stepping]:",
-        Task.repr(task)
+        Task.repr(task),
       )
     }
 

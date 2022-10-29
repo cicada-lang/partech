@@ -3,7 +3,7 @@ import * as Task from "../task"
 
 export function match_grammar_p(
   task: Task.Task,
-  grammar: Value.grammar
+  grammar: Value.grammar,
 ): boolean {
   if (task.grammar_name !== grammar.name) return false
   const { delayed } = grammar

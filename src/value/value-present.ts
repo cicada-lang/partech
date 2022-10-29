@@ -17,7 +17,7 @@ type on_grammar_t = "force_one_step" | "only_show_name" | "as_exp"
 
 export function present(
   value: Value.Value,
-  opts: PresentOpts = DEFAULT_PRESENT_OPTS
+  opts: PresentOpts = DEFAULT_PRESENT_OPTS,
 ): Present {
   switch (value.kind) {
     case "Value.fn": {
@@ -40,11 +40,11 @@ export function present(
         case "force_one_step": {
           const result = {}
           for (const [choice_name, parts] of Value.DelayedChoices.force(
-            delayed
+            delayed,
           )) {
             Object.assign(
               result,
-              Value.choice_present(name, choice_name, parts)
+              Value.choice_present(name, choice_name, parts),
             )
           }
           return result
@@ -67,7 +67,7 @@ export function present(
 export function choice_present(
   grammar_name: string,
   choice_name: string,
-  parts: Array<{ name?: string; value: Value.Value }>
+  parts: Array<{ name?: string; value: Value.Value }>,
 ): { [key: string]: Array<Present> } {
   return {
     [`${grammar_name}:${choice_name}`]: parts.map((part) => {

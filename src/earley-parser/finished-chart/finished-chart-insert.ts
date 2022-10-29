@@ -3,7 +3,7 @@ import * as Task from "../task"
 
 export function insert(
   finished_chart: FinishedChart.FinishedChart,
-  task: Task.Task
+  task: Task.Task,
 ): void {
   const index = task.index
   const finished_map = finished_chart[index]

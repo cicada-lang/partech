@@ -3,7 +3,7 @@ import * as Task from "../task"
 
 export function insert(
   resumable_chart: ResumableChart.ResumableChart,
-  task: Task.Task
+  task: Task.Task,
 ): void {
   const index = Task.progress_index(task)
   const resumable_map = resumable_chart[index]

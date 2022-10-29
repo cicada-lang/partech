@@ -3,7 +3,7 @@ export function interval_not_overlap_p(
   x0: number,
   x1: number,
   y0: number,
-  y1: number
+  y1: number,
 ): boolean {
   return y0 > x1 || y1 < x0
 }
@@ -13,7 +13,7 @@ export function interval_overlap_p(
   x0: number,
   x1: number,
   y0: number,
-  y1: number
+  y1: number,
 ): boolean {
   return !interval_not_overlap_p(x0, x1, y0, y1)
 }

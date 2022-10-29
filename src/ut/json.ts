@@ -28,7 +28,7 @@ export function assert_json_number(data: Json): number {
 export function assert_json_boolean(data: Json): boolean {
   if (typeof data === "boolean") return data
   throw new Error(
-    `Expecting data to be boolean instead of: ${inspect(data)}.\n`
+    `Expecting data to be boolean instead of: ${inspect(data)}.\n`,
   )
 }
 
@@ -50,11 +50,11 @@ export function assert_json_array(data: Json): Array<Json> {
 export function assert_json_object(data: Json): { [key: string]: Json } {
   if (data === null)
     throw new Error(
-      `Expecting data to be object instead of null: ${inspect(data)}.\n`
+      `Expecting data to be object instead of null: ${inspect(data)}.\n`,
     )
   if (data instanceof Array)
     throw new Error(
-      `Expecting data to be object instead of array: ${inspect(data)}.\n`
+      `Expecting data to be object instead of array: ${inspect(data)}.\n`,
     )
   if (typeof data === "object") return data
 

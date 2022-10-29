@@ -11,7 +11,7 @@ export function create(table: Array<[string, RegExp]>): TableLexer.TableLexer {
       throw new Error(
         "Can not use RegExp with global property in TableLexer.\n" +
           `label: ${label}\n` +
-          `regexp: ${regexp.toString()}\n`
+          `regexp: ${regexp.toString()}\n`,
       )
     }
   }
@@ -34,7 +34,7 @@ export function create(table: Array<[string, RegExp]>): TableLexer.TableLexer {
             throw new LexingError(
               `No progress during at: ${i}\n` +
                 `remain: ${report_remain(remain)}\n` +
-                `label: ${result.label}\n`
+                `label: ${result.label}\n`,
             )
           }
 
@@ -50,7 +50,7 @@ export function create(table: Array<[string, RegExp]>): TableLexer.TableLexer {
             "All regexp in table fail to match remaining input.\n" +
               `index: ${i}\n` +
               `remain: ${report_remain(remain)}\n` +
-              `labels: ${table.map(([label]) => label).join(", ")}\n`
+              `labels: ${table.map(([label]) => label).join(", ")}\n`,
           )
         }
       }
@@ -69,7 +69,7 @@ function report_remain(remain: string): string {
 
 function match_table(
   text: string,
-  table: Array<[string, RegExp]>
+  table: Array<[string, RegExp]>,
 ): undefined | (Token.Token & { forword: number }) {
   for (const [label, regexp] of table) {
     const result = execWithIndices(regexp, text)

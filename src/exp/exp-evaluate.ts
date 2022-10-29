@@ -7,7 +7,7 @@ import * as Value from "../value"
 export function evaluate(
   mod: Mod.Mod,
   env: Env.Env,
-  exp: Exp.Exp
+  exp: Exp.Exp,
 ): Array<Value.Value> {
   switch (exp.kind) {
     case "Exp.v": {
@@ -27,7 +27,7 @@ export function evaluate(
       if (result.length !== 1)
         throw new Error(
           `target of Exp.ap should evaluates only one value.\n` +
-            `target: ${inspect(exp.target)}\n`
+            `target: ${inspect(exp.target)}\n`,
         )
       const target = result[0]
       const args = exp.args.flatMap((arg) => evaluate(mod, env, arg))
@@ -54,7 +54,7 @@ function lookup(
   name: string,
   opts: {
     on_not_found: (name: string) => never
-  }
+  },
 ): Array<Value.Value> {
   const values = Env.lookup(env, name)
   if (values) return values
@@ -65,13 +65,13 @@ function lookup(
 
 function do_ap(
   target: Value.Value,
-  args: Array<Value.Value>
+  args: Array<Value.Value>,
 ): Array<Value.Value> {
   if (target.kind === "Value.fn") {
     return Value.Closure.apply(target.ret_cl, args)
   } else {
     throw new Error(
-      `expecting target to be Value.fn\n` + `target: ${inspect(target)}\n`
+      `expecting target to be Value.fn\n` + `target: ${inspect(target)}\n`,
     )
   }
 }

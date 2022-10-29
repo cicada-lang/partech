@@ -47,7 +47,7 @@ function build_grammar(obj: Obj<any>): Exp.Exp {
       throw new Error(
         `ambiguous grammar name.\n` +
           `new name: ${grammar_name}\n` +
-          `old name: ${name}\n`
+          `old name: ${name}\n`,
       )
     } else {
       name = grammar_name

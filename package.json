@@ -8,17 +8,13 @@
   ],
   "scripts": {
     "build": "npx tsc",
-    "watch": "npx tsc --watch",
+    "build:watch": "npx tsc --watch",
     "format": "npx prettier src --write",
     "test:js": "test-runner test node 'lib/**/*.test.js'",
     "test:snapshot": "test-runner snapshot node 'lib/**/*.snapshot.js' --extern snapshot",
     "test:lex-default": "./bin/partech.js lex tests/tables/example.table.js --output tests/tables/default.tokens.json",
     "test:lex-example": "./bin/partech.js lex tests/tables/example.table.js --table tests/tables/example.table.js --output tests/tables/example.tokens.json",
     "test": "npm run test:js && npm run test:snapshot && npm run test:lex-default && npm run test:lex-example"
-  },
-  "prettier": {
-    "semi": false,
-    "trailingComma": "es5"
   },
   "bin": {
     "partech": "bin/partech.js"

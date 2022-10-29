@@ -5,7 +5,7 @@ import * as Value from "../../value"
 import * as DelayedChoices from "../delayed-choices"
 
 export function force(
-  delayed: DelayedChoices.DelayedChoices
+  delayed: DelayedChoices.DelayedChoices,
 ): Map<string, Array<{ name?: string; value: Value.Value }>> {
   const { choices, mod, env } = delayed
   if (delayed.cache) return delayed.cache
@@ -13,7 +13,7 @@ export function force(
     Array.from(choices, ([name, parts]) => [
       name,
       parts.flatMap((part) => evaluate_part(mod, env, part)),
-    ])
+    ]),
   )
   return delayed.cache
 }
@@ -21,7 +21,7 @@ export function force(
 function evaluate_part(
   mod: Mod.Mod,
   env: Env.Env,
-  part: { name?: string; value: Exp.Exp }
+  part: { name?: string; value: Exp.Exp },
 ): Array<{ name?: string; value: Value.Value }> {
   function create_part(value: Value.Value): {
     name?: string

@@ -4,7 +4,7 @@ import * as Task from "../task"
 export function tasks(
   finished_chart: FinishedChart.FinishedChart,
   index: number,
-  grammar_name: string
+  grammar_name: string,
 ): IterableIterator<Task.Task> {
   const task_map = finished_chart[index].get(grammar_name)
   if (task_map !== undefined) {

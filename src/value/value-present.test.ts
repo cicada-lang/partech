@@ -10,7 +10,7 @@ function test(
   env: Env.Env,
   exp_present: any,
   value_present: any,
-  opts: Value.PresentOpts = { on_grammar: "as_exp" }
+  opts: Value.PresentOpts = { on_grammar: "as_exp" },
 ): void {
   const exp = Exp.from_present(exp_present)
   const values = Exp.evaluate(mod, env, exp)
@@ -44,7 +44,7 @@ function test(
         { tail: { $ap: ["one_or_more", '"("', "exp", '")"'] } },
       ],
     },
-    { on_grammar: "as_exp" }
+    { on_grammar: "as_exp" },
   )
 
   // Exp.ap
@@ -60,7 +60,7 @@ function test(
         { tail: { $ap: ["one_or_more", "x"] } },
       ],
     },
-    { on_grammar: "as_exp" }
+    { on_grammar: "as_exp" },
   )
 
   test(
@@ -76,6 +76,6 @@ function test(
         { tail: "one_or_more" },
       ],
     },
-    { on_grammar: "force_one_step" }
+    { on_grammar: "force_one_step" },
   )
 }

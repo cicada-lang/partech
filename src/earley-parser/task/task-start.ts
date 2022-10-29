@@ -6,7 +6,7 @@ export function start(
   grammar_name: string,
   choice_name: string,
   parts: Array<{ name?: string; value: Value.Value }>,
-  index: number
+  index: number,
 ): Task.Task {
   return {
     grammar_name,
@@ -23,7 +23,7 @@ function format_id_head(
   grammar_name: string,
   choice_name: string,
   parts: Array<{ name?: string; value: Value.Value }>,
-  index: number
+  index: number,
 ): string {
   let s = grammar_name + ":" + choice_name + "@" + index + " -> "
   for (let i = 0; i < parts.length; i++) {

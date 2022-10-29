@@ -34,7 +34,7 @@ export function present(exp: Exp.Exp): Present {
 export function choice_present(
   grammar_name: string,
   choice_name: string,
-  parts: Array<{ name?: string; value: Exp.Exp }>
+  parts: Array<{ name?: string; value: Exp.Exp }>,
 ): { [key: string]: Array<Present> } {
   return {
     [`${grammar_name}:${choice_name}`]: parts.map((part) => {

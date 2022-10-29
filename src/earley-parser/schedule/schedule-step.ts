@@ -14,7 +14,7 @@ export function step(schedule: Schedule.Schedule, task: Task.Task): void {
       throw new ParsingError(
         "Schedule.step should not meet Value.fn\n" +
           `value: ${inspect(Value.present(value))}`,
-        { span }
+        { span },
       )
     }
     case "Value.str":
@@ -32,7 +32,7 @@ export function step(schedule: Schedule.Schedule, task: Task.Task): void {
 function match_terminal(
   schedule: Schedule.Schedule,
   task: Task.Task,
-  value: Value.Value
+  value: Value.Value,
 ): void {
   if (
     Task.progress_index(task) < schedule.tokens.length &&
@@ -40,7 +40,7 @@ function match_terminal(
   ) {
     Schedule.insert_task(
       schedule,
-      Task.advance(task, { index: Task.progress_index(task) + 1 })
+      Task.advance(task, { index: Task.progress_index(task) + 1 }),
     )
   }
 }

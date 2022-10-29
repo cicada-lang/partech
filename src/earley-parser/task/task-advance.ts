@@ -2,7 +2,7 @@ import * as Task from "../task"
 
 export function advance(
   task: Task.Task,
-  entry: { index: number; choice_name?: string }
+  entry: { index: number; choice_name?: string },
 ): Task.Task {
   return {
     grammar_name: task.grammar_name,

@@ -5,7 +5,7 @@ import { inspect } from "../ut/inspect"
 export function matcher<A>(choices: {
   [key: string]: (
     body: Tree.Body,
-    opts: { head: Tree.Head; span: Span.Span }
+    opts: { head: Tree.Head; span: Span.Span },
   ) => A
 }): (tree: Tree.Tree) => A {
   return (tree) => {
@@ -20,14 +20,14 @@ export function matcher<A>(choices: {
         throw new Error(
           "Key mismatch.\n" +
             `- key: ${key}\n` +
-            `- keys of choices: ${Object.keys(choices).join(", ")}\n`
+            `- keys of choices: ${Object.keys(choices).join(", ")}\n`,
         )
       }
     } else {
       throw new Error(
         "Expecting Tree.node.\n" +
           `Tree.matcher can only match on node.\n` +
-          `- tree: ${inspect(tree)}\n`
+          `- tree: ${inspect(tree)}\n`,
       )
     }
   }

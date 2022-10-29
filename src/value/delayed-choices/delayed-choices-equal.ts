@@ -4,7 +4,7 @@ import * as DelayedChoices from "../delayed-choices"
 
 export function equal(
   x: DelayedChoices.DelayedChoices,
-  y: DelayedChoices.DelayedChoices
+  y: DelayedChoices.DelayedChoices,
 ): boolean {
   if (x === y) return true
   return (

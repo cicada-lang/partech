@@ -19,7 +19,7 @@ function harvest_node(
   schedule: Schedule.Schedule,
   grammar: Value.grammar,
   start: number,
-  end: number
+  end: number,
 ): Tree.node {
   for (const task of TaskChart.tasks_at(schedule.chart, end)) {
     if (task_ripe_p(task)) {
@@ -29,9 +29,9 @@ function harvest_node(
           schedule,
           get_parts(grammar, task.choice_name),
           task.progress,
-          start
+          start,
         ),
-        span_from_tokens(schedule.tokens, start, end)
+        span_from_tokens(schedule.tokens, start, end),
       )
     }
   }
@@ -49,7 +49,7 @@ function harvest_node(
 
   function get_parts(
     grammar: Value.grammar,
-    choice_name: string
+    choice_name: string,
   ): Array<{ name?: string; value: Value.Value }> {
     const choices = Value.DelayedChoices.force(grammar.delayed)
     const parts = choices.get(choice_name)
@@ -58,7 +58,7 @@ function harvest_node(
       throw new ParsingError(
         `Can not find choice: ${choice_name}\n` +
           `grammar: ${inspect(Value.present(grammar))}\n`,
-        { span }
+        { span },
       )
     }
     return parts
@@ -69,7 +69,7 @@ function harvest_body(
   schedule: Schedule.Schedule,
   parts: Array<{ name?: string; value: Value.Value }>,
   progress: Array<{ index: number; choice_name?: string }>,
-  start: number
+  start: number,
 ): Obj<Tree.Tree> {
   if (parts.length !== progress.length) {
     const span = span_from_tokens(schedule.tokens, start, start)
@@ -78,7 +78,7 @@ function harvest_body(
         "parts.length !== progress.length\n" +
         `parts.length: ${parts.length}\n` +
         `progress.length: ${progress.length}\n`,
-      { span }
+      { span },
     )
   }
 
@@ -101,7 +101,7 @@ function harvest_value(
   schedule: Schedule.Schedule,
   value: Value.Value,
   entry: { index: number; choice_name?: string },
-  index: number
+  index: number,
 ): Tree.Tree {
   if (entry.choice_name) {
     if (value.kind === "Value.grammar") {
@@ -111,7 +111,7 @@ function harvest_value(
       throw new ParsingError(
         "The value should be Value.grammar.\n" +
           `value: ${inspect(Value.present(value))}\n`,
-        { span }
+        { span },
       )
     }
   } else {
@@ -123,7 +123,7 @@ function harvest_value(
 function span_from_tokens(
   tokens: Array<Token.Token>,
   start: number,
-  end: number
+  end: number,
 ): Span.Span {
   if (tokens.length === 0) return { lo: 0, hi: 0 }
 

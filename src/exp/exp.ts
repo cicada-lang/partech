@@ -64,7 +64,7 @@ type grammar = {
 
 export const grammar = (
   name: string,
-  choices: Map<string, Array<{ name?: string; value: Exp }>>
+  choices: Map<string, Array<{ name?: string; value: Exp }>>,
 ): grammar => ({
   kind: "Exp.grammar",
   name,

@@ -7,7 +7,7 @@ export function dot(mod: Mod.Mod, name: string): Value.Value {
   const values = Exp.evaluate(mod, env, Exp.v(name))
   if (values.length !== 1) {
     throw new Error(
-      `The values.length should be 1, instead of: ${values.length}.`
+      `The values.length should be 1, instead of: ${values.length}.`,
     )
   }
   return values[0]

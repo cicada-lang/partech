@@ -43,7 +43,7 @@ export type grammar = {
 
 export const grammar = (
   name: string,
-  delayed: DelayedChoices.DelayedChoices
+  delayed: DelayedChoices.DelayedChoices,
 ): grammar => ({
   kind: "Value.grammar",
   name,

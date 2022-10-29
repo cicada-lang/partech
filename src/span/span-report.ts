@@ -19,7 +19,7 @@ function repr_in_context(
     mode: ColorMode
   } = {
     mode: color_mode,
-  }
+  },
 ): string {
   let s = ""
   for (let i = 0; i < context.length; i++) {
@@ -75,7 +75,7 @@ function to_line_span_in_context(span: Span.Span, context: string): Span.Span {
 function line_span_focus(
   span: Span.Span,
   context: string,
-  margin: number
+  margin: number,
 ): string {
   let lines = context.split("\n")
   return lines.slice(Math.max(0, span.lo - margin), span.hi + margin).join("\n")

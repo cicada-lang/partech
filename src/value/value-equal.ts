@@ -17,7 +17,7 @@ export function equal(x: Value.Value, y: Value.Value): boolean {
 
 export function equal_parts(
   x: Array<{ name?: string; value: Value.Value }>,
-  y: Array<{ name?: string; value: Value.Value }>
+  y: Array<{ name?: string; value: Value.Value }>,
 ): boolean {
   if (x === y) return true
   if (x.length !== y.length) return false

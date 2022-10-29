@@ -7,6 +7,6 @@ export function build(present: Present): TableLexer.TableLexer {
     present.map(([label, pattern, flags]) => [
       label,
       new RegExp(pattern, flags),
-    ])
+    ]),
   )
 }

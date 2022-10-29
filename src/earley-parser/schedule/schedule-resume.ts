@@ -11,7 +11,7 @@ export function resume(schedule: Schedule.Schedule, task: Task.Task): void {
         Task.advance(entry.task, {
           index: Task.progress_index(entry.task) + forward_steps,
           choice_name: task.choice_name,
-        })
+        }),
       )
     }
   }

@@ -4,7 +4,7 @@ import * as TaskChart from "../task-chart"
 export function insert(
   chart: TaskChart.TaskChart,
   index: number,
-  task: Task.Task
+  task: Task.Task,
 ): boolean {
   const id = Task.id(task)
   const task_map = chart[index]

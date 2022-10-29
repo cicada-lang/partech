@@ -13,7 +13,7 @@ export function parsing_error(
   schedule: Schedule.Schedule,
   grammar: Value.grammar,
   start: number,
-  end: number
+  end: number,
 ): ParsingError {
   const i = find_last_index(schedule, start, end)
   if (index_still_can_scan_p(schedule, i)) {
@@ -23,7 +23,7 @@ export function parsing_error(
       s += "while expecting:\n"
       for (const task of TaskChart.tasks_at(
         schedule.chart,
-        Math.max(0, i - 1)
+        Math.max(0, i - 1),
       )) {
         if (task_terminal_p(task)) {
           s += " "
@@ -67,7 +67,7 @@ export function parsing_error(
 function find_last_index(
   schedule: Schedule.Schedule,
   start: number,
-  end: number
+  end: number,
 ): number {
   let index = 0
   for (let i = start; i < end; i++) {
@@ -81,7 +81,7 @@ function find_last_index(
 
 function index_with_terminal_p(
   schedule: Schedule.Schedule,
-  i: number
+  i: number,
 ): boolean {
   const tasks = Array.from(TaskChart.tasks_at(schedule.chart, i))
   return tasks.length !== 0 && tasks.some(task_terminal_p)
@@ -94,7 +94,7 @@ function task_terminal_p(task: Task.Task): boolean {
 
 function index_still_can_scan_p(
   schedule: Schedule.Schedule,
-  i: number
+  i: number,
 ): boolean {
   for (const task of TaskChart.tasks_at(schedule.chart, i)) {
     if (task_still_match_p(task, schedule.tokens[i])) return true

@@ -3,7 +3,7 @@ import path from "path"
 
 export async function write_json(
   obj: any,
-  file: string | null | undefined
+  file: string | null | undefined,
 ): Promise<void> {
   const text = JSON.stringify(obj, null, 2)
   if (file) {

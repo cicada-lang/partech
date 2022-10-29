@@ -19,7 +19,7 @@ export function from_present(present: Mod.Present): Mod.Mod {
              |the grammar name must be the same as the name.
              |- grammar name: ${exp.name}
              |- name: ${name}
-             |`)
+             |`),
         )
       Mod.update(mod, name, exp)
     }

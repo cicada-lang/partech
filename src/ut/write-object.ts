@@ -10,7 +10,7 @@ export async function write_object(
     format: Format
   } = {
     format: "json",
-  }
+  },
 ): Promise<void> {
   if (file && file.endsWith(".json")) {
     return await write_json(obj, file)

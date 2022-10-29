@@ -4,7 +4,7 @@ import * as Value from "../value"
 
 export function grammar_start(
   grammars: Mod.Present,
-  start: string
+  start: string,
 ): Value.grammar {
   const mod = Mod.from_present(grammars)
   const grammar = Mod.dot(mod, start)
@@ -13,7 +13,7 @@ export function grammar_start(
     throw new Error(
       `Expecting grammar to be Value.grammar.\n` +
         `  start: ${start}\n` +
-        `  grammar: ${inspect(Value.present(grammar))}\n`
+        `  grammar: ${inspect(Value.present(grammar))}\n`,
     )
   }
 

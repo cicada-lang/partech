@@ -8,7 +8,7 @@ export function next_part(task: Task.Task): {
   if (Task.finished_p(task)) {
     throw new Error(
       `finished task have no next part.\n` +
-        `progress.length: ${task.progress.length}\n`
+        `progress.length: ${task.progress.length}\n`,
     )
   }
 

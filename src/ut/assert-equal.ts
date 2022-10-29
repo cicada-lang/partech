@@ -9,7 +9,7 @@ export function assert_equal(x: any, y: any): void {
         "the following two values are not equal\n" +
         `x: ${inspect(x)}\n` +
         `y: ${inspect(y)}\n` +
-        `diff: ${inspect(deep_diff.diff(x, y))}\n`
+        `diff: ${inspect(deep_diff.diff(x, y))}\n`,
     )
   }
 }

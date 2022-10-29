@@ -30,7 +30,7 @@ function equal_exps(x: Array<Exp.Exp>, y: Array<Exp.Exp>): boolean {
 
 export function equal_choices(
   x: Map<string, Array<{ name?: string; value: Exp.Exp }>>,
-  y: Map<string, Array<{ name?: string; value: Exp.Exp }>>
+  y: Map<string, Array<{ name?: string; value: Exp.Exp }>>,
 ): boolean {
   if (x === y) return true
   if (x.size !== y.size) return false
@@ -44,7 +44,7 @@ export function equal_choices(
 
 function equal_parts(
   x: Array<{ name?: string; value: Exp.Exp }>,
-  y: Array<{ name?: string; value: Exp.Exp }>
+  y: Array<{ name?: string; value: Exp.Exp }>,
 ): boolean {
   if (x === y) return true
   if (x.length !== y.length) return false

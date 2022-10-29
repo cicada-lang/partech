@@ -3,7 +3,7 @@ import * as Task from "../task"
 
 export function entries(
   resumable_chart: ResumableChart.ResumableChart,
-  task: Task.Task
+  task: Task.Task,
 ): IterableIterator<ResumableChart.ResumableEntry> {
   const task_map = resumable_chart[task.index].get(task.grammar_name)
   if (task_map !== undefined) {

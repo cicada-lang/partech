@@ -2,7 +2,7 @@ import * as Token from "../../token"
 import * as FinishedChart from "../finished-chart"
 
 export function create(
-  tokens: Array<Token.Token>
+  tokens: Array<Token.Token>,
 ): FinishedChart.FinishedChart {
   const length = tokens.length + 1
 

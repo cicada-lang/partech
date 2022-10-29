@@ -6,7 +6,7 @@ import * as TaskQueue from "../task-queue"
 
 export function insert_task(
   schedule: Schedule.Schedule,
-  task: Task.Task
+  task: Task.Task,
 ): void {
   const index = Task.progress_index(task)
   if (TaskChart.insert(schedule.chart, index, task)) {

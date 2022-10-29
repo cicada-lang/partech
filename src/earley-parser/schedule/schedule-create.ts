@@ -8,7 +8,7 @@ import * as TaskQueue from "../task-queue"
 
 export function create(
   tokens: Array<Token.Token>,
-  grammar: Value.grammar
+  grammar: Value.grammar,
 ): Schedule.Schedule {
   const schedule = {
     tokens,

@@ -7,12 +7,12 @@ import * as Schedule from "./schedule"
 
 export function create(
   grammar: Value.Value,
-  opts: Schedule.Opts = Schedule.DEFAULT_OPTS
+  opts: Schedule.Opts = Schedule.DEFAULT_OPTS,
 ): EarleyParser.EarleyParser {
   if (grammar.kind !== "Value.grammar") {
     throw new Error(
       `Expecting grammar to be Value.grammar.\n` +
-        `grammar: ${inspect(Value.present(grammar))}\n`
+        `grammar: ${inspect(Value.present(grammar))}\n`,
     )
   }
 
