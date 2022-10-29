@@ -1,6 +1,6 @@
-// list of a -- grammar with epsilon
+import { expect, test } from "vitest"
 
-export const grammars = {
+const grammars = {
   $start: "list_of_a",
 
   list_of_a: {
@@ -16,3 +16,7 @@ export const grammars = {
     },
   },
 }
+
+test("list of a -- grammar with epsilon", () => {
+  expect
+})

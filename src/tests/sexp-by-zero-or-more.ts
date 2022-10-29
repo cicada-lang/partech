@@ -1,8 +1,7 @@
-// Symbol expression (a.k.a. sexp) -- implemented by zero_or_more
-
+import { expect, test } from "vitest"
 import * as pt from ".."
 
-export const grammars = {
+const grammars = {
   zero_or_more: pt.grammars.zero_or_more,
 
   $start: "sexp",
@@ -16,3 +15,7 @@ export const grammars = {
     },
   },
 }
+
+test("Symbol expression (a.k.a. sexp) -- implemented by zero_or_more", () => {
+  expect
+})

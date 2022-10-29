@@ -1,9 +1,7 @@
 import { expect, test } from "vitest"
 import * as pt from ".."
 
-// equal number of "a" "b"
-
-export const grammars = {
+const grammars = {
   ab: {
     $grammar: {
       "ab:head_a": ['"a"', "b"],
@@ -35,7 +33,7 @@ const parse = pt.gen_parse({
   matcher: (tree) => tree,
 })
 
-test("ab -- ok", () => {
+test("equal number of 'a's and 'b's", () => {
   expect(parse("a a b b")).toMatchInlineSnapshot(`
     {
       "body": {},

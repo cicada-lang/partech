@@ -1,8 +1,7 @@
-// line of more then one dashes
-
+import { expect, test } from "vitest"
 import * as pt from ".."
 
-export const grammars = {
+const grammars = {
   one_or_more: pt.grammars.one_or_more,
 
   $start: "dashline",
@@ -13,3 +12,7 @@ export const grammars = {
     },
   },
 }
+
+test("line of more then one dashes", () => {
+  expect
+})

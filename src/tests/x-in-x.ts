@@ -1,6 +1,6 @@
-// x in x
+import { expect, test } from "vitest"
 
-export const grammars = {
+const grammars = {
   $start: "s",
 
   s: {
@@ -10,3 +10,7 @@ export const grammars = {
     },
   },
 }
+
+test("x in x", () => {
+  expect
+})

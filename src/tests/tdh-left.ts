@@ -1,6 +1,6 @@
-// tdh_left -- left regular grammar
+import { expect, test } from "vitest"
 
-export const grammars = {
+const grammars = {
   $start: "tdh",
 
   tdh: {
@@ -31,3 +31,7 @@ export const grammars = {
     },
   },
 }
+
+test("tdh_left -- left regular grammar", () => {
+  expect
+})

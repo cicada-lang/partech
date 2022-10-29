@@ -1,8 +1,7 @@
-// Old familiar JSON
-
+import { expect, test } from "vitest"
 import * as pt from ".."
 
-module.exports = {
+const grammars = {
   one_or_more: pt.grammars.one_or_more,
 
   $start: "value",
@@ -83,3 +82,7 @@ module.exports = {
     },
   },
 }
+
+test("Old familiar JSON", () => {
+  expect
+})

@@ -1,8 +1,7 @@
-// zero or more "x"s -- grammar with epsilon and optional
-
+import { expect, test } from "vitest"
 import * as pt from ".."
 
-export const grammars = {
+const grammars = {
   optional: pt.grammars.optional,
 
   $start: "xs",
@@ -14,3 +13,7 @@ export const grammars = {
     },
   },
 }
+
+test("zero or more 'x's -- grammar with epsilon and optional", () => {
+  expect
+})

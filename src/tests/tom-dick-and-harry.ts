@@ -1,8 +1,10 @@
-// tom dick and harry
-
+import { expect, test } from "vitest"
 import * as pt from ".."
 
-export const grammars = {
+
+
+
+const grammars = {
   one_or_more: pt.grammars.one_or_more,
 
   $start: "tom_dick_and_harry",
@@ -33,3 +35,7 @@ export const grammars = {
     },
   },
 }
+
+test("tom dick and harry", () => {
+  expect
+})
