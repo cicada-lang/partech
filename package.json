@@ -19,15 +19,12 @@
     "test": "npm run test:ts && npm run test:snapshot"
   },
   "dependencies": {
-    "deep-diff": "^1.0.2",
     "fast-deep-equal": "^3.1.3",
     "picocolors": "^1.0.0",
-    "readdirp": "^3.6.0",
     "regexp-match-indices": "^1.0.2"
   },
   "devDependencies": {
     "husky": "^8.0.1",
-    "@types/deep-diff": "^1.0.1",
     "@types/node": "^18.11.7",
     "@xieyuheng/test-runner": "^0.2.7",
     "prettier": "^2.7.1",
