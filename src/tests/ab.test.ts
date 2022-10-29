@@ -28,7 +28,7 @@ export const grammars = {
   },
 }
 
-const parseExp = pt.gen_parse({
+const parse = pt.gen_parse({
   preprocess: pt.preprocess.erase_comment,
   lexer: pt.lexers.common,
   grammar: pt.grammar_start(grammars, "ab"),
@@ -36,7 +36,7 @@ const parseExp = pt.gen_parse({
 })
 
 test("ab -- ok", () => {
-  expect(parseExp("a a b b")).toMatchInlineSnapshot(`
+  expect(parse("a a b b")).toMatchInlineSnapshot(`
     {
       "body": {},
       "head": {
@@ -49,5 +49,61 @@ test("ab -- ok", () => {
         "lo": 0,
       },
     }
+  `)
+
+  expect(parse("a b a b")).toMatchInlineSnapshot(`
+    {
+      "body": {},
+      "head": {
+        "kind": "head_a",
+        "name": "ab",
+      },
+      "kind": "Tree.node",
+      "span": {
+        "hi": 7,
+        "lo": 0,
+      },
+    }
+  `)
+
+  expect(parse("a b b a")).toMatchInlineSnapshot(`
+    {
+      "body": {},
+      "head": {
+        "kind": "head_a",
+        "name": "ab",
+      },
+      "kind": "Tree.node",
+      "span": {
+        "hi": 7,
+        "lo": 0,
+      },
+    }
+  `)
+
+  expect(parse("a b")).toMatchInlineSnapshot(`
+    {
+      "body": {},
+      "head": {
+        "kind": "head_a",
+        "name": "ab",
+      },
+      "kind": "Tree.node",
+      "span": {
+        "hi": 3,
+        "lo": 0,
+      },
+    }
+  `)
+
+  expect(() => parse("a a b")).toThrowErrorMatchingInlineSnapshot(`
+    "Found END_OF_TOKENS, while expecting:
+     \\"b\\":
+         b:one_b@1 -> [1m[31m> [39m[22m\\"b\\"
+     \\"b\\":
+         b:more_b@1 -> [1m[31m> [39m[22m\\"b\\" ab
+     \\"a\\":
+         b:after_a@1 -> [1m[31m> [39m[22m\\"a\\" b b
+    "
   `)
 })
