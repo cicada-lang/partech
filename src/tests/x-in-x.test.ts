@@ -1,6 +1,5 @@
 import { expect, test } from "vitest"
 import { createParser } from "./utils"
-import * as pt from ".."
 
 const grammars = {
   s: {
@@ -14,5 +13,9 @@ const grammars = {
 const parse = createParser(grammars, "s")
 
 test("x in x", () => {
-  expect
+  expect(parse("x"))
+  expect(() => parse("x x")).toThrow()
+  expect(parse("x x x"))
+  expect(() => parse("x x x x")).toThrow()
+  expect(parse("x x x x x"))
 })
