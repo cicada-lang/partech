@@ -1,10 +1,7 @@
 import { expect, test } from "vitest"
 import { createParser } from "./utils"
-import * as pt from ".."
 
 const grammars = {
-  $start: "tdh",
-
   tdh: {
     $grammar: {
       "tdh:t": ['"t"'],
@@ -35,5 +32,6 @@ const grammars = {
 const parse = createParser(grammars, "tdh")
 
 test("tdh -- regular grammar", () => {
-  expect
+  expect(parse("t,d&h"))
+  expect(() => parse("t,d,h")).toThrow()
 })

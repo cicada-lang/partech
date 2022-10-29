@@ -1,4 +1,3 @@
-tdh.test.ts
 tdh-left.test.ts
 tom-dick-and-harry.test.ts
 x-in-x.test.ts
