@@ -1,6 +1,6 @@
 {
   "name": "@cicada-lang/partech",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "repository": "github:cicada-lang/partech",
   "main": "lib/index.js",
   "files": [
