@@ -1,7 +1,4 @@
-
-
 import { expect, test } from "vitest"
-import * as pt from ".."
 
 const grammars = {
   $start: "xs",
@@ -13,7 +10,6 @@ const grammars = {
     },
   },
 }
-
 
 test("zero or more 'x's -- grammar with epsilon", () => {
   expect

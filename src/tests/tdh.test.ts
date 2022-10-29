@@ -1,8 +1,6 @@
 import { expect, test } from "vitest"
-import * as pt from ".."
 
-
-module.exports = {
+const grammars = {
   $start: "tdh",
 
   tdh: {
@@ -31,7 +29,6 @@ module.exports = {
     },
   },
 }
-
 
 test("tdh -- regular grammar", () => {
   expect
