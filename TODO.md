@@ -1,4 +1,4 @@
-tests/utils.ts -- `createParser`
+tests/utils.ts -- `createParserFail` -- output no color
 
 json.test.ts
 list-of-a.test.ts
