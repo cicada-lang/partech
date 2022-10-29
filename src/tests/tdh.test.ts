@@ -1,4 +1,5 @@
 import { expect, test } from "vitest"
+import * as pt from ".."
 
 const grammars = {
   $start: "tdh",
@@ -29,6 +30,13 @@ const grammars = {
     },
   },
 }
+
+const parse = pt.gen_parse({
+  preprocess: pt.preprocess.erase_comment,
+  lexer: pt.lexers.common,
+  grammar: pt.grammar_start(grammars, "tdh"),
+  matcher: (tree) => tree,
+})
 
 test("tdh -- regular grammar", () => {
   expect

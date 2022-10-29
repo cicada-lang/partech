@@ -1,8 +1,7 @@
 import { expect, test } from "vitest"
+import * as pt from ".."
 
 const grammars = {
-  $start: "s",
-
   s: {
     $grammar: {
       "s:x": ['"x"'],
@@ -10,6 +9,13 @@ const grammars = {
     },
   },
 }
+
+const parse = pt.gen_parse({
+  preprocess: pt.preprocess.erase_comment,
+  lexer: pt.lexers.common,
+  grammar: pt.grammar_start(grammars, "s"),
+  matcher: (tree) => tree,
+})
 
 test("x in x", () => {
   expect

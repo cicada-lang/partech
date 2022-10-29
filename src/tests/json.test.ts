@@ -4,8 +4,6 @@ import * as pt from ".."
 const grammars = {
   one_or_more: pt.grammars.one_or_more,
 
-  $start: "value",
-
   value: {
     $grammar: {
       "value:object": ["object"],
@@ -82,6 +80,13 @@ const grammars = {
     },
   },
 }
+
+const parse = pt.gen_parse({
+  preprocess: pt.preprocess.erase_comment,
+  lexer: pt.lexers.common,
+  grammar: pt.grammar_start(grammars, "value"),
+  matcher: (tree) => tree,
+})
 
 test("Old familiar JSON", () => {
   expect

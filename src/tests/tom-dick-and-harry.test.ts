@@ -4,8 +4,6 @@ import * as pt from ".."
 const grammars = {
   one_or_more: pt.grammars.one_or_more,
 
-  $start: "tom_dick_and_harry",
-
   tom_dick_and_harry: {
     $grammar: {
       "tom_dick_and_harry:name": ["name"],
@@ -32,6 +30,13 @@ const grammars = {
     },
   },
 }
+
+const parse = pt.gen_parse({
+  preprocess: pt.preprocess.erase_comment,
+  lexer: pt.lexers.common,
+  grammar: pt.grammar_start(grammars, "tom_dick_and_harry"),
+  matcher: (tree) => tree,
+})
 
 test("tom dick and harry", () => {
   expect
