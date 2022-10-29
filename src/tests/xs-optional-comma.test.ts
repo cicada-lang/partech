@@ -16,5 +16,5 @@ const grammars = {
 const parse = createParser(grammars, "xs")
 
 test("zero or more 'x's -- grammar with epsilon and optional", () => {
-  expect
+  expect(parse(""))
 })
