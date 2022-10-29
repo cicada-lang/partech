@@ -1,5 +1,3 @@
-list-of-a.test.ts
-sexp-by-one-or-more.test.ts
 sexp-by-zero-or-more.test.ts
 tdh.test.ts
 tdh-left.test.ts
