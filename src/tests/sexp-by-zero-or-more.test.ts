@@ -18,5 +18,26 @@ const grammars = {
 const parse = createParser(grammars, "sexp")
 
 test("Symbol expression (a.k.a. sexp) -- implemented by zero_or_more", () => {
-  expect
+  expect(
+    parse(`
+(
+  ()
+  ( )
+  (a)
+  (a b c)
+  n
+  (a b (c))
+  (((a)) b (c))
+  (true false)
+  (true false true)
+  (true ((((false)))))
+  ( true false)
+  (true false true )
+  (true ((( (false)))))
+)`),
+  )
+
+  expect(() => parse("(a b c))")).toThrow()
+  expect(() => parse("(a b c")).toThrow()
+  expect(() => parse("(a ? c)")).toThrow()
 })

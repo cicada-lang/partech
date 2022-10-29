@@ -1,4 +1,3 @@
-sexp-by-zero-or-more.test.ts
 tdh.test.ts
 tdh-left.test.ts
 tom-dick-and-harry.test.ts
