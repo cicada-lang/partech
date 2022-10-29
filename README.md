@@ -1,6 +1,6 @@
 # Partech
 
-Parsing Techniques -- A language for writing grammar and generate parser.
+Parsing Techniques -- A language for writing grammars and generating parsers.
 
 - Named after Dick Grune and Ceriel J.H. Jacobs' book ["Parsing Techniques -- A Practical Guide"](https://www.amazon.com/Parsing-Techniques-Practical-Monographs-Computer/dp/1441919015).
 - Embedded in JavaScript/TypeScript.
