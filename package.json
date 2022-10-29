@@ -14,7 +14,8 @@
     "test:watch": "vitest --dir src --threads false",
     "test:coverage": "vitest --dir src --threads false --run --coverage ",
     "test:gui": "vitest --dir src --threads false --ui",
-    "test": "npm run test:ts"
+    "test:snapshot": "test-runner snapshot node 'lib/**/*.snapshot.js' --extern snapshot",
+    "test": "npm run test:ts && npm run test:snapshot"
   },
   "dependencies": {
     "deep-diff": "^1.0.2",

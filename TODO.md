@@ -1,5 +1,3 @@
-use vitest to test:snapshot -- instead using test-runner to test:snapshot
-
 use vitest to test parse
 use vitest to test lex
 

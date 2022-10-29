@@ -1,5 +1,5 @@
 import * as EarleyParser from "../earley-parser"
-import { grammar, lexer } from "./earley-parser.recognize.test"
+import { grammar, lexer } from "./earley-parser.recognize"
 
 const parser = EarleyParser.create(grammar, {
   schedule: {
