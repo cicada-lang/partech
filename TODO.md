@@ -1,4 +1,6 @@
-dashline.test.ts
+tests/utils.ts -- `parseGrammar`
+tests/utils.ts -- `parseGrammarFail` -- output no color
+
 json.test.ts
 list-of-a.test.ts
 sexp-by-one-or-more.test.ts
