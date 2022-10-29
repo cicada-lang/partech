@@ -99,11 +99,11 @@ test("ab -- ok", () => {
   expect(() => parse("a a b")).toThrowErrorMatchingInlineSnapshot(`
     "Found END_OF_TOKENS, while expecting:
      \\"b\\":
-         b:one_b@1 -> [1m[31m> [39m[22m\\"b\\"
+         b:one_b@1 -> [1m[31m> [39m[22m\\"b\\" 
      \\"b\\":
-         b:more_b@1 -> [1m[31m> [39m[22m\\"b\\" ab
+         b:more_b@1 -> [1m[31m> [39m[22m\\"b\\" ab 
      \\"a\\":
-         b:after_a@1 -> [1m[31m> [39m[22m\\"a\\" b b
+         b:after_a@1 -> [1m[31m> [39m[22m\\"a\\" b b 
     "
   `)
 })
