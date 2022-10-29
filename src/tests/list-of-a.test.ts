@@ -20,5 +20,7 @@ const grammars = {
 const parse = createParser(grammars, "list_of_a")
 
 test("list of a -- grammar with epsilon", () => {
-  expect
+  expect(parse("[a a a a]"))
+  expect(() => parse("a a a a")).toThrow()
+  expect(() => parse("[a b a a]")).toThrow()
 })
