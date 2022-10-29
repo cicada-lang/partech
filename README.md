@@ -4,6 +4,31 @@ Parsing Techniques
 
 A language for writing grammar and generate parser, embedded in JavaScript/TypeScript.
 
+## Usages
+
+Install the package:
+
+```sh
+npm install @cicada-lang/partech
+```
+
+TODO
+
+## Examples
+
+TODO
+
+## Development
+
+```sh
+npm install           # Install dependencies
+npm run build         # Compile `src/` to `lib/`
+npm run build:watch   # Watch the compilation
+npm run format        # Format the code
+npm run test          # Run test
+npm run test:watch    # Watch the testing
+```
+
 ## Contributions
 
 To make a contribution, fork this project and create a pull request.
