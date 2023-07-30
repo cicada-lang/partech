@@ -1,6 +1,6 @@
 import { expect, test } from "vitest"
-import { createParser } from "./utils"
 import * as pt from ".."
+import { createParser } from "./utils"
 
 const grammars = {
   one_or_more: pt.grammars.one_or_more,

@@ -1,6 +1,5 @@
 import { expect, test } from "vitest"
 import { createParser } from "./utils"
-import * as pt from ".."
 
 const grammars = {
   tdh: {
