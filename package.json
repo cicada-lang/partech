@@ -7,7 +7,6 @@
     "lib"
   ],
   "scripts": {
-    "prepare": "husky install",
     "build": "npx tsc",
     "build:watch": "npx tsc --watch",
     "format": "npx prettier src --write",
@@ -24,7 +23,6 @@
     "regexp-match-indices": "^1.0.2"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
     "@types/node": "^18.11.18",
     "@xieyuheng/test-runner": "^0.2.7",
     "prettier": "^2.8.3",
