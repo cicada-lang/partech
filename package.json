@@ -23,15 +23,15 @@
     "regexp-match-indices": "^1.0.2"
   },
   "devDependencies": {
-    "@types/node": "^20.4.5",
-    "@xieyuheng/test-runner": "^0.2.7",
-    "prettier": "^3.0.0",
+    "@types/node": "^20.6.0",
+    "@xieyuheng/test-runner": "^0.2.9",
+    "prettier": "^3.0.3",
     "prettier-plugin-organize-imports": "^3.2.3",
-    "typescript": "^5.1.6",
+    "typescript": "^5.2.2",
     "@vitest/coverage-c8": "^0.33.0",
-    "@vitest/coverage-istanbul": "^0.33.0",
-    "@vitest/ui": "^0.33.0",
-    "vitest": "^0.33.0"
+    "@vitest/coverage-istanbul": "^0.34.4",
+    "@vitest/ui": "^0.34.4",
+    "vitest": "^0.34.4"
   },
   "license": "GPL-3.0-or-later"
 }
