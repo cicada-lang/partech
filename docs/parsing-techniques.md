@@ -1,10 +1,15 @@
-# Parsing Techniques
+---
+title: Parsing Techniques
+---
 
-## grammar
+# grammar
 
 We are able to use markup to pick up parts,
 and ignore other parts during collection.
 The named parts will be pick up into the resulting object.
+
+The resulting object is a generic AST,
+to be matched to target AST in the host language.
 
 ```
 exp = {
@@ -14,7 +19,7 @@ exp = {
 }
 ```
 
-## fn
+# fn
 
 ```
 one_or_more(x) = {
@@ -23,7 +28,11 @@ one_or_more(x) = {
 }
 ```
 
-## ap
+`one_or_more` as a grammar function, takes grammar and returns grammar.
+
+Can we do shallow embedding by adding a `Grammar` type to JS?
+
+# ap
 
 A function can only take one argument.
 - terminal -- "(" & ")" , does not count as argument.
@@ -44,7 +53,7 @@ one_or_more("(" x ")")
 }
 ```
 
-## parse tree
+# parse tree
 
 A parse tree is a graph that shows how a sentence is derived by some CFG.
 
@@ -101,6 +110,14 @@ ADT decorated by terminals and ignored non-terminals.
     </one_or_more.one>
   </one_or_more.more>
 </one_or_more.more>
+```
+
+```
+one_or_more.one("f")
+
+one_or_more.more("f",
+  one_or_more.more("f",
+    one_or_more.one("f")))
 ```
 
 ```
